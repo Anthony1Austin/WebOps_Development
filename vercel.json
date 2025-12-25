@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/Blog Website/(.*)",
+      "destination": "/Blog Website/$1"
+    },
+    {
+      "source": "/Business Websites/(.*)",
+      "destination": "/Business Websites/$1"
+    },
+    {
+      "source": "/Dealership Website/(.*)",
+      "destination": "/Dealership Website/$1"
+    },
+    {
+      "source": "/E-commerce Website/(.*)",
+      "destination": "/E-commerce Website/$1"
+    },
+    {
+      "source": "/Service-Oriented Websites/(.*)",
+      "destination": "/Service-Oriented Websites/$1"
+    },
+    {
+      "source": "/Property Management/(.*)",
+      "destination": "/Property Management/$1"
+    },
+    {
+      "source": "/Roofing Website/(.*)",
+      "destination": "/Property Management/$1"
+    },
+    {
+      "source": "/Portfolio Website/(.*)",
+      "destination": "/Portfolio Website/$1"
+    },
+    {
+      "source": "/Basic Website Structure/(.*)",
+      "destination": "/Basic Website Structure/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/WebOps Development LLC Website/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/WebOps Development LLC Website/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
+
