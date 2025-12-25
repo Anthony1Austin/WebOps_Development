@@ -10,6 +10,9 @@ import { initPortfolio } from './portfolio.js';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Set logo link based on environment
+    setLogoLink();
+
     // Initialize navigation
     initNavigation();
 
@@ -34,6 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize form handling
     initFormHandling();
 });
+
+// Set logo link to work in both development and production
+function setLogoLink() {
+    const logoLink = document.getElementById('logo-link');
+    if (!logoLink) return;
+
+    // Check if we're in development (localhost or 127.0.0.1)
+    const isDevelopment = window.location.hostname === 'localhost' || 
+                         window.location.hostname === '127.0.0.1' ||
+                         window.location.hostname === '';
+
+    if (isDevelopment) {
+        // In development, use the current directory's index.html
+        const currentPath = window.location.pathname;
+        const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+        logoLink.href = basePath + 'index.html';
+    } else {
+        // In production, use root
+        logoLink.href = '/';
+    }
+}
 
 // Update template count in hero section
 function updateTemplateCount() {
