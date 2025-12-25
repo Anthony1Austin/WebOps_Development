@@ -10,7 +10,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Easily migratable to Next.js, React, Vue, or any framework",
         color: "#0d9488",
-        path: "../Blog Website/",
+        path: "templates/blog-website/",
         badge: "Content",
         image: "assets/images/templates/blog-website-featured.jpg"
     },
@@ -21,7 +21,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Framework-agnostic - works with any backend or framework",
         color: "#1e3a8a",
-        path: "../Business Websites/",
+        path: "templates/business-websites/",
         badge: "Corporate",
         image: "assets/images/templates/business-websites-hero.jpg"
     },
@@ -32,7 +32,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Ready for React, Vue, or framework integration",
         color: "#2563eb",
-        path: "../Dealership Website/",
+        path: "templates/dealership-website/",
         badge: "Automotive",
         image: "assets/images/templates/dealership-website-hero.jpg"
     },
@@ -43,7 +43,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Easily enhanced with Next.js, Vue.js, Ruby on Rails, or any e-commerce backend",
         color: "#9333ea",
-        path: "../E-commerce Website/",
+        path: "templates/e-commerce-website/",
         badge: "Retail",
         image: "assets/images/templates/e-commerce-website-preview.jpg"
     },
@@ -54,7 +54,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Framework-agnostic foundation",
         color: "#ec4899",
-        path: "../Service-Oriented Websites/",
+        path: "templates/service-oriented-website/",
         badge: "Service",
         image: "assets/images/templates/service-oriented-website-preview.jpg"
     },
@@ -65,7 +65,7 @@ const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Ready for React, Vue, or any property management backend",
         color: "#1e3a8a",
-        path: "../Roofing Website/",
+        path: "templates/property-management/",
         badge: "Real Estate",
         image: "assets/images/templates/property-management-preview.jpg"
     }
