@@ -44,7 +44,6 @@
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
-    overflow: visible;
 }
 
 .header.scrolled {
@@ -56,18 +55,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: var(--header-height);
-    padding: var(--spacing-md) 0;
-    height: auto;
+    height: var(--header-height);
 }
 
 .nav__brand {
-    font-size: clamp(10rem, 25vw, 37.5rem) !important;
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
 }
 
 .nav__logo {
@@ -76,24 +69,16 @@
     gap: var(--spacing-xs);
     transition: color var(--transition-fast);
     color: var(--color-gray-900);
-    text-decoration: none;
-    white-space: nowrap;
 }
 
 .logo-text {
     color: var(--color-primary);
-    font-size: clamp(10rem, 25vw, 37.5rem) !important;
-    font-weight: var(--font-weight-bold);
-    line-height: 1;
-    display: inline-block;
 }
 
 .logo-suffix {
     color: var(--color-gray-600);
-    font-size: clamp(6.25rem, 15vw, 18.75rem) !important;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-normal);
-    line-height: 1;
-    display: inline-block;
 }
 
 .nav__logo:hover {
@@ -175,7 +160,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: max(var(--header-height), 200px);
+    padding-top: var(--header-height);
 }
 
 .hero__background {
@@ -327,7 +312,7 @@
 }
 
 .footer__logo {
-    font-size: var(--font-size-6xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
     margin-bottom: var(--spacing-md);
