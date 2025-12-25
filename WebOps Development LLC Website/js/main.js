@@ -5,7 +5,7 @@
 import { updateCopyrightYear } from './utils.js';
 import { initNavigation } from './navigation.js';
 import { initAnimations, initScrollToTop } from './animations.js';
-import { initTemplates } from './templates.js';
+import { initTemplates, templates } from './templates.js';
 import { initPortfolio } from './portfolio.js';
 
 // Initialize when DOM is ready
@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll to top
     initScrollToTop();
 
+    // Update template count dynamically
+    updateTemplateCount();
+
     // Initialize template showcase
     initTemplates();
 
@@ -31,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize form handling
     initFormHandling();
 });
+
+// Update template count in hero section
+function updateTemplateCount() {
+    const templateCountElement = document.querySelector('.hero__stat-number');
+    if (templateCountElement && templates) {
+        templateCountElement.textContent = `${templates.length}+`;
+    }
+}
 
 // Form Handling
 function initFormHandling() {

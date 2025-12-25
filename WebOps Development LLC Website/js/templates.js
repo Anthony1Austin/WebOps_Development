@@ -2,7 +2,7 @@
  * Template Showcase - Dynamically generate template cards
  */
 
-const templates = [
+export const templates = [
     {
         name: "Blog Website",
         description: "Perfect for content creators, writers, and businesses sharing regular updates. Features article layouts, categories, and search functionality.",
