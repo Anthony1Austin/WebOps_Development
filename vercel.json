@@ -1,17 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "WebOps Development LLC Website/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/WebOps Development LLC Website/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
