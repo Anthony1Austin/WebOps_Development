@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebSite">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>WebBlogs | Latest Articles & Insights</title>
+    <meta name="title" content="WebBlogs | Latest Articles & Insights">
+    <meta name="description" content="Discover engaging articles, insights, and stories. Read the latest blog posts on topics that matter to you.">
+    <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
+    <meta name="author" content="Your Name or Company Name">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="Your Website Title | Primary Keyword">
+    <meta property="og:description" content="Your compelling social media description">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Descriptive alt text for your image">
+    <meta property="og:site_name" content="WebBlogs">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourwebsite.com/">
+    <meta name="twitter:title" content="Your Website Title">
+    <meta name="twitter:description" content="Your compelling Twitter description">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/images/twitter-image.jpg">
+    <meta name="twitter:image:alt" content="Descriptive alt text">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Your App Name">
+    <meta name="application-name" content="Your App Name">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WebBlogs",
+        "url": "https://yourwebsite.com",
+        "description": "Your website description",
+        "publisher": {
+            "@type": "Organization",
+            "name": "WebBlogs",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yourwebsite.com/assets/images/logo.png"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://yourwebsite.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Your Company Name",
+        "url": "https://yourwebsite.com",
+        "logo": "https://yourwebsite.com/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-XXX-XXX-XXXX",
+            "contactType": "Customer Service",
+            "areaServed": "US",
+            "availableLanguage": ["en", "es"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/yourpage",
+            "https://www.twitter.com/yourhandle",
+            "https://www.linkedin.com/company/yourcompany",
+            "https://www.instagram.com/yourhandle"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Enhanced Logo and Social Icons -->
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Main navigation">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo" aria-label="Home">
+                    <img src="assets/images/logo.png" alt="Blog Logo" class="nav__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="nav__logo-text">WebBlogs</span>
+                </a>
+            </div>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="nav__toggle-icon"></span>
+                <span class="nav__toggle-icon"></span>
+                <span class="nav__toggle-icon"></span>
+            </button>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active" aria-current="page">Home</a>
+                </li>
+                <li class="nav__item nav__item--dropdown">
+                    <a href="#blog" class="nav__link">Blog <span class="nav__dropdown-icon">▼</span></a>
+                    <ul class="nav__dropdown">
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#archive">Archive</a></li>
+                        <li><a href="#tags">Tags</a></li>
+                    </ul>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#subscribe" class="nav__link nav__link--cta">Subscribe</a>
+                </li>
+            </ul>
+            
+            <div class="nav__social">
+                <a href="#" class="nav__social-link" aria-label="Facebook">📘</a>
+                <a href="#" class="nav__social-link" aria-label="Twitter">🐦</a>
+                <a href="#" class="nav__social-link" aria-label="Instagram">📷</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section with Schema.org -->
+        <section class="hero hero--blog" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title" itemprop="name">Welcome to Our Blog</h1>
+                    <p class="hero__description" itemprop="description">Discover stories, insights, and ideas that inspire and inform</p>
+                    <div class="hero__search">
+                        <input type="search" placeholder="Search articles..." class="hero__search-input" aria-label="Search blog articles">
+                        <button class="hero__search-btn" aria-label="Search">🔍</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post Section -->
+        <section class="section featured-post" id="featured">
+            <div class="container">
+                <article class="featured-post__card" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="featured-post__image">
+                        <img src="assets/images/nadiia-ganzhyi-cfE5i6sHCFA-unsplash.jpg" alt="Featured article" itemprop="image">
+                        <span class="featured-post__badge">Featured</span>
+                    </div>
+                    <div class="featured-post__content">
+                        <div class="featured-post__meta">
+                            <div class="featured-post__author">
+                                <img src="assets/images/author.jpg" alt="Author" class="featured-post__author-avatar">
+                                <span class="featured-post__author-name" itemprop="author">John Doe</span>
+                            </div>
+                            <span class="featured-post__category" itemprop="articleSection">Technology</span>
+                            <time class="featured-post__date" datetime="2024-01-20" itemprop="datePublished">January 20, 2024</time>
+                        </div>
+                        <h2 class="featured-post__title" itemprop="headline">
+                            <a href="#featured-post">The Ultimate Guide to Building a Successful Blog in 2024</a>
+                        </h2>
+                        <p class="featured-post__excerpt" itemprop="description">Discover the essential strategies, tools, and techniques that will help you create a blog that stands out, engages readers, and drives real results in today's competitive digital landscape.</p>
+                        <div class="featured-post__footer">
+                            <a href="#featured-post" class="btn btn--primary">Read Full Article →</a>
+                            <div class="featured-post__share">
+                                <span>Share:</span>
+                                <a href="#" class="share-btn" aria-label="Share on Facebook">📘</a>
+                                <a href="#" class="share-btn" aria-label="Share on Twitter">🐦</a>
+                                <a href="#" class="share-btn" aria-label="Share on LinkedIn">💼</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="section blog" id="blog">
+            <div class="container blog__container">
+                <div class="blog__main">
+                    <h2 class="section__title">Latest Articles</h2>
+                    <div class="blog__posts">
+                        <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+                            <div class="blog-post__image">
+                                <img src="assets/images/campaign-creators-iEiUITs149M-unsplash.jpg" alt="Blog post image" itemprop="image">
+                            </div>
+                            <div class="blog-post__content">
+                                <div class="blog-post__meta">
+                                    <div class="blog-post__author">
+                                        <img src="assets/images/author.jpg" alt="Author" class="blog-post__author-avatar">
+                                        <span class="blog-post__author-name" itemprop="author">John Doe</span>
+                                    </div>
+                                    <span class="blog-post__category" itemprop="articleSection">Technology</span>
+                                    <time class="blog-post__date" datetime="2024-01-15" itemprop="datePublished">January 15, 2024</time>
+                                </div>
+                                <h3 class="blog-post__title" itemprop="headline">
+                                    <a href="#post-1">The Future of Web Development: Trends to Watch in 2024</a>
+                                </h3>
+                                <p class="blog-post__excerpt" itemprop="description">Explore the latest trends shaping the web development landscape and what developers need to know for the coming year.</p>
+                                <div class="blog-post__footer">
+                                    <a href="#post-1" class="blog-post__read-more">Read More →</a>
+                                    <div class="blog-post__actions">
+                                        <span class="blog-post__read-time">5 min read</span>
+                                        <div class="blog-post__share">
+                                            <button class="share-btn share-btn--small" aria-label="Share">🔗</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+                            <div class="blog-post__image">
+                                <img src="assets/images/kevin-canlas-EfatMNgAAUw-unsplash.jpg" alt="Blog post image" itemprop="image">
+                            </div>
+                            <div class="blog-post__content">
+                                <div class="blog-post__meta">
+                                    <div class="blog-post__author">
+                                        <img src="https://via.placeholder.com/32/f59e0b/ffffff?text=JD" alt="Author" class="blog-post__author-avatar">
+                                        <span class="blog-post__author-name" itemprop="author">John Doe</span>
+                                    </div>
+                                    <span class="blog-post__category" itemprop="articleSection">Design</span>
+                                    <time class="blog-post__date" datetime="2024-01-10" itemprop="datePublished">January 10, 2024</time>
+                                </div>
+                                <h3 class="blog-post__title" itemprop="headline">
+                                    <a href="#post-2">10 Essential Design Principles for Modern Websites</a>
+                                </h3>
+                                <p class="blog-post__excerpt" itemprop="description">Learn the fundamental design principles that make websites both beautiful and functional in today's digital landscape.</p>
+                                <div class="blog-post__footer">
+                                    <a href="#post-2" class="blog-post__read-more">Read More →</a>
+                                    <div class="blog-post__actions">
+                                        <span class="blog-post__read-time">7 min read</span>
+                                        <div class="blog-post__share">
+                                            <button class="share-btn share-btn--small" aria-label="Share">🔗</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+                            <div class="blog-post__image">
+                                <img src="assets/images/stephen-phillips-hostreviews-co-uk-shr_Xn8S8QU-unsplash.jpg" alt="Blog post image" itemprop="image">
+                            </div>
+                            <div class="blog-post__content">
+                                <div class="blog-post__meta">
+                                    <div class="blog-post__author">
+                                        <img src="https://via.placeholder.com/32/14b8a6/ffffff?text=JD" alt="Author" class="blog-post__author-avatar">
+                                        <span class="blog-post__author-name" itemprop="author">John Doe</span>
+                                    </div>
+                                    <span class="blog-post__category" itemprop="articleSection">SEO</span>
+                                    <time class="blog-post__date" datetime="2024-01-05" itemprop="datePublished">January 5, 2024</time>
+                                </div>
+                                <h3 class="blog-post__title" itemprop="headline">
+                                    <a href="#post-3">Complete Guide to SEO Optimization in 2024</a>
+                                </h3>
+                                <p class="blog-post__excerpt" itemprop="description">Master the art of SEO with our comprehensive guide covering everything from keywords to technical optimization.</p>
+                                <div class="blog-post__footer">
+                                    <a href="#post-3" class="blog-post__read-more">Read More →</a>
+                                    <div class="blog-post__actions">
+                                        <span class="blog-post__read-time">10 min read</span>
+                                        <div class="blog-post__share">
+                                            <button class="share-btn share-btn--small" aria-label="Share">🔗</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <aside class="blog__sidebar">
+                    <!-- About Me Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">About the Author</h3>
+                        <div class="author-card">
+                            <img src="assets/images/author.jpg" alt="Author" class="author-card__avatar-img">
+                            <h4 class="author-card__name">John Doe</h4>
+                            <p class="author-card__bio">Writer, developer, and digital enthusiast sharing insights on web development and design.</p>
+                            <div class="author-card__social">
+                                <a href="#" aria-label="Twitter">🐦</a>
+                                <a href="#" aria-label="LinkedIn">💼</a>
+                                <a href="#" aria-label="Instagram">📷</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">Categories</h3>
+                        <ul class="sidebar__list">
+                            <li><a href="#tech">Technology <span class="sidebar__count">(12)</span></a></li>
+                            <li><a href="#design">Design <span class="sidebar__count">(8)</span></a></li>
+                            <li><a href="#seo">SEO <span class="sidebar__count">(6)</span></a></li>
+                            <li><a href="#marketing">Marketing <span class="sidebar__count">(5)</span></a></li>
+                            <li><a href="#business">Business <span class="sidebar__count">(4)</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">Popular Posts</h3>
+                        <ul class="sidebar__posts">
+                            <li class="sidebar__post">
+                                <a href="#popular-1">
+                                    <img src="assets/images/jackson-sophat-_t-l5FFH8VA-unsplash.jpg" alt="Post thumbnail" class="sidebar__post-img">
+                                    <div class="sidebar__post-content">
+                                        <h4 class="sidebar__post-title">Top 10 Web Design Trends</h4>
+                                        <span class="sidebar__post-date">Jan 15, 2024</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sidebar__post">
+                                <a href="#popular-2">
+                                    <img src="assets/images/nisonco-pr-and-seo-yIRdUr6hIvQ-unsplash.jpg" alt="Post thumbnail" class="sidebar__post-img">
+                                    <div class="sidebar__post-content">
+                                        <h4 class="sidebar__post-title">SEO Best Practices</h4>
+                                        <span class="sidebar__post-date">Jan 10, 2024</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sidebar__post">
+                                <a href="#popular-3">
+                                    <img src="assets/images/melanie-deziel-U33fHryBYBU-unsplash.jpg" alt="Post thumbnail" class="sidebar__post-img">
+                                    <div class="sidebar__post-content">
+                                        <h4 class="sidebar__post-title">Content Marketing Guide</h4>
+                                        <span class="sidebar__post-date">Jan 5, 2024</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tag Cloud Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#tag-web" class="tag">Web Design</a>
+                            <a href="#tag-seo" class="tag">SEO</a>
+                            <a href="#tag-marketing" class="tag">Marketing</a>
+                            <a href="#tag-development" class="tag">Development</a>
+                            <a href="#tag-content" class="tag">Content</a>
+                            <a href="#tag-strategy" class="tag">Strategy</a>
+                            <a href="#tag-tips" class="tag">Tips</a>
+                            <a href="#tag-tutorials" class="tag">Tutorials</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar__widget sidebar__widget--highlight">
+                        <h3 class="sidebar__title">Newsletter</h3>
+                        <p class="sidebar__text">Get the latest articles delivered to your inbox. No spam, unsubscribe anytime.</p>
+                        <form class="sidebar__form">
+                            <input type="email" placeholder="Your email address" class="sidebar__input" required>
+                            <button type="submit" class="btn btn--primary btn--small btn--block">Subscribe</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Social Media Feed Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">Follow Us</h3>
+                        <div class="social-feed">
+                            <p class="sidebar__text">Connect with us on social media for daily updates and inspiration.</p>
+                            <div class="social-feed__links">
+                                <a href="#" class="social-feed__link" aria-label="Instagram">📷 Instagram</a>
+                                <a href="#" class="social-feed__link" aria-label="Twitter">🐦 Twitter</a>
+                                <a href="#" class="social-feed__link" aria-label="Facebook">📘 Facebook</a>
+                                <a href="#" class="social-feed__link" aria-label="LinkedIn">💼 LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Archive Widget -->
+                    <div class="sidebar__widget">
+                        <h3 class="sidebar__title">Archive</h3>
+                        <ul class="sidebar__list">
+                            <li><a href="#archive-2024-01">January 2024 <span class="sidebar__count">(8)</span></a></li>
+                            <li><a href="#archive-2023-12">December 2023 <span class="sidebar__count">(12)</span></a></li>
+                            <li><a href="#archive-2023-11">November 2023 <span class="sidebar__count">(10)</span></a></li>
+                            <li><a href="#archive-2023-10">October 2023 <span class="sidebar__count">(9)</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Blog Layout Examples Section -->
+        <section class="section blog-examples" id="blog-examples">
+            <div class="container">
+                <h2 class="section__title">Blog Layout Examples</h2>
+                <p class="section__description">Explore different blog layout styles to find what works best for your content</p>
+                
+                <div class="blog-examples__grid">
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Personal Blog</h3>
+                        <p class="blog-example-card__description">Perfect for individuals sharing personal stories, experiences, and thoughts. Focus on authenticity and personal connection.</p>
+                    </div>
+                    
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Lifestyle Blog</h3>
+                        <p class="blog-example-card__description">Ideal for sharing daily life, fashion, food, travel, and wellness content. Emphasizes visual appeal and lifestyle inspiration.</p>
+                    </div>
+                    
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Travel Blog</h3>
+                        <p class="blog-example-card__description">Showcase destinations, travel tips, and adventures. Rich imagery and storytelling are key elements.</p>
+                    </div>
+                    
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Creative Blog</h3>
+                        <p class="blog-example-card__description">For artists, designers, and creatives to showcase portfolios, tutorials, and creative processes. Visual-first approach.</p>
+                    </div>
+                    
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Business Blog</h3>
+                        <p class="blog-example-card__description">Professional content for companies sharing industry insights, company news, and thought leadership articles.</p>
+                    </div>
+                    
+                    <div class="blog-example-card">
+                        <h3 class="blog-example-card__title">Fashion Blog</h3>
+                        <p class="blog-example-card__description">Style inspiration, outfit ideas, and fashion trends. High-quality imagery and trend-focused content.</p>
+                    </div>
+                </div>
+                
+                <div class="blog-examples__info">
+                    <p><strong>Responsive Design is Non-Negotiable</strong></p>
+                    <p>Your blog layout needs to look amazing on every device—from desktops to smartphones and tablets. Responsive design ensures that your website automatically adjusts to different screen sizes, providing a seamless experience for all visitors.</p>
+                    <p><em>Research shows it takes only 0.05 seconds for visitors to form a first impression of your site's design. Make it count!</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about" itemscope itemtype="https://schema.org/AboutPage">
+            <div class="container">
+                <h2 class="section__title">About This Blog</h2>
+                <div class="about__content" itemprop="mainEntity">
+                    <p>Welcome to our blog where we share insights, tutorials, and stories about web development, design, and digital innovation. Our mission is to provide valuable content that helps readers stay informed and inspired.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Schema.org -->
+        <section class="section contact" id="contact" itemscope itemtype="https://schema.org/ContactPage">
+            <div class="container">
+                <h2 class="section__title">Contact Us</h2>
+                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                    <div class="contact__info" style="margin-bottom: 2rem;">
+                        <p itemprop="name"><strong>Your Business Name</strong></p>
+                        <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span itemprop="streetAddress">123 Main Street</span><br>
+                            <span itemprop="addressLocality">City</span>, <span itemprop="addressRegion">State</span> <span itemprop="postalCode">12345</span>
+                        </p>
+                        <p>Phone: <a href="tel:+1XXXXXXXXXX" itemprop="telephone">+1 (XXX) XXX-XXXX</a></p>
+                        <p>Email: <a href="mailto:info@yourwebsite.com" itemprop="email">info@yourwebsite.com</a></p>
+                    </div>
+                </div>
+                <form class="contact__form" id="contact-form" aria-label="Contact form">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form__input" required aria-required="true" autocomplete="name">
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email <span aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form__input" required aria-required="true" autocomplete="email">
+                    </div>
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message <span aria-label="required">*</span></label>
+                        <textarea id="message" name="message" class="form__textarea" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- About Column -->
+                <div class="footer__column">
+                    <h3 class="footer__title">About This Blog</h3>
+                    <p class="footer__text">Welcome to our blog where we share insights, tutorials, and stories about web development, design, and digital innovation. Our mission is to provide valuable content that helps readers stay informed and inspired.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories Column -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="#tech">Technology</a></li>
+                        <li><a href="#design">Design</a></li>
+                        <li><a href="#seo">SEO</a></li>
+                        <li><a href="#marketing">Marketing</a></li>
+                        <li><a href="#business">Business</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Newsletter Column -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Stay Updated</h3>
+                    <p class="footer__text">Subscribe to our newsletter for the latest articles and updates.</p>
+                    <form class="footer__form">
+                        <input type="email" placeholder="Your email" class="footer__input" required>
+                        <button type="submit" class="btn btn--primary btn--small">Subscribe</button>
+                    </form>
+                    <div class="footer__contact">
+                        <p><strong>Contact Us</strong></p>
+                        <p>Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
+                        <p>Phone: <a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="current-year"></span> WebBlogs. All rights reserved.</p>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <span class="footer__separator">|</span>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <span class="footer__separator">|</span>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+        <span class="scroll-top__icon">↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/seo.js"></script>
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- Analytics (Add your tracking codes here) -->
+    <!-- Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+</body>
+</html>
+

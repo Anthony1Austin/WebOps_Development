@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebSite">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Your Website Title | Primary Keyword - Secondary Keyword</title>
+    <meta name="title" content="Your Website Title | Primary Keyword - Secondary Keyword">
+    <meta name="description" content="Your compelling 150-160 character meta description that includes your primary keyword and a call to action.">
+    <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
+    <meta name="author" content="Your Name or Company Name">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="Your Website Title | Primary Keyword">
+    <meta property="og:description" content="Your compelling social media description">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Descriptive alt text for your image">
+    <meta property="og:site_name" content="Your Site Name">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourwebsite.com/">
+    <meta name="twitter:title" content="Your Website Title">
+    <meta name="twitter:description" content="Your compelling Twitter description">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/images/twitter-image.jpg">
+    <meta name="twitter:image:alt" content="Descriptive alt text">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Your App Name">
+    <meta name="application-name" content="Your App Name">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Your Website Name",
+        "url": "https://yourwebsite.com",
+        "description": "Your website description",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Your Company Name",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yourwebsite.com/assets/images/logo.png"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://yourwebsite.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Your Company Name",
+        "url": "https://yourwebsite.com",
+        "logo": "https://yourwebsite.com/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-XXX-XXX-XXXX",
+            "contactType": "Customer Service",
+            "areaServed": "US",
+            "availableLanguage": ["en", "es"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/yourpage",
+            "https://www.twitter.com/yourhandle",
+            "https://www.linkedin.com/company/yourcompany",
+            "https://www.instagram.com/yourhandle"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Schema.org markup -->
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Main navigation">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo" aria-label="Home">Logo</a>
+            </div>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="nav__toggle-icon"></span>
+                <span class="nav__toggle-icon"></span>
+                <span class="nav__toggle-icon"></span>
+            </button>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active" aria-current="page">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#portfolio" class="nav__link">Portfolio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section with Schema.org -->
+        <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title" itemprop="name">Creative Portfolio</h1>
+                    <p class="hero__description" itemprop="description">Showcasing innovative design and creative excellence</p>
+                    <div class="hero__buttons">
+                        <a href="#portfolio" class="btn btn--primary" aria-label="View portfolio">View Work</a>
+                        <a href="#contact" class="btn btn--secondary" aria-label="Get in touch">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about" itemscope itemtype="https://schema.org/AboutPage">
+            <div class="container">
+                <h2 class="section__title">About Us</h2>
+                <p class="section__description">This is a blank canvas ready for your content</p>
+                <div class="about__content" itemprop="mainEntity">
+                    <!-- Add your content here with proper heading hierarchy -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section with Schema.org -->
+        <section class="section services" id="services">
+            <div class="container">
+                <h2 class="section__title">Our Services</h2>
+                <div class="cards" itemscope itemtype="https://schema.org/Service">
+                    <article class="card" itemscope itemtype="https://schema.org/Service">
+                        <div class="card__icon" aria-hidden="true">📱</div>
+                        <h3 class="card__title" itemprop="name">Service One</h3>
+                        <p class="card__description" itemprop="description">Customize this section to showcase your services</p>
+                    </article>
+                    <article class="card" itemscope itemtype="https://schema.org/Service">
+                        <div class="card__icon" aria-hidden="true">💻</div>
+                        <h3 class="card__title" itemprop="name">Service Two</h3>
+                        <p class="card__description" itemprop="description">Add as many cards as needed</p>
+                    </article>
+                    <article class="card" itemscope itemtype="https://schema.org/Service">
+                        <div class="card__icon" aria-hidden="true">🎨</div>
+                        <h3 class="card__title" itemprop="name">Service Three</h3>
+                        <p class="card__description" itemprop="description">Fully responsive and customizable</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="section portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="section__title">Our Portfolio</h2>
+                <div class="portfolio__grid" itemscope itemtype="https://schema.org/ItemList">
+                    <!-- Portfolio items will go here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Schema.org -->
+        <section class="section contact" id="contact" itemscope itemtype="https://schema.org/ContactPage">
+            <div class="container">
+                <h2 class="section__title">Contact Us</h2>
+                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                    <div class="contact__info" style="margin-bottom: 2rem;">
+                        <p itemprop="name"><strong>Your Business Name</strong></p>
+                        <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span itemprop="streetAddress">123 Main Street</span><br>
+                            <span itemprop="addressLocality">City</span>, <span itemprop="addressRegion">State</span> <span itemprop="postalCode">12345</span>
+                        </p>
+                        <p>Phone: <a href="tel:+1XXXXXXXXXX" itemprop="telephone">+1 (XXX) XXX-XXXX</a></p>
+                        <p>Email: <a href="mailto:info@yourwebsite.com" itemprop="email">info@yourwebsite.com</a></p>
+                    </div>
+                </div>
+                <form class="contact__form" id="contact-form" aria-label="Contact form">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form__input" required aria-required="true" autocomplete="name">
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email <span aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form__input" required aria-required="true" autocomplete="email">
+                    </div>
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message <span aria-label="required">*</span></label>
+                        <textarea id="message" name="message" class="form__textarea" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__text">&copy; <span id="current-year"></span> Your Company. All rights reserved.</p>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <a href="/privacy-policy">Privacy Policy</a> | 
+                    <a href="/terms-of-service">Terms of Service</a> | 
+                    <a href="/sitemap.xml">Sitemap</a>
+                </nav>
+                <div class="footer__social">
+                    <!-- Add social links with proper aria-labels -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-toggle__icon">🌙</span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+        <span class="scroll-top__icon">↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/seo.js"></script>
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- Analytics (Add your tracking codes here) -->
+    <!-- Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+</body>
+</html>
+

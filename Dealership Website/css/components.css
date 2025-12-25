@@ -1,0 +1,400 @@
+/* Button Component */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* Card Component */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.card__icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.card__title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-900);
+}
+
+.card__description {
+    color: var(--color-gray-600);
+    margin: 0;
+}
+
+/* Form Components */
+.contact__form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form__group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form__label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-900);
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+    background-color: var(--color-white);
+    color: var(--color-gray-900);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.theme-toggle__icon {
+    font-size: var(--font-size-xl);
+}
+
+/* Scroll to Top */
+.scroll-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: calc(var(--spacing-xl) + 70px);
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-fixed);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.scroll-top.visible {
+    display: flex;
+}
+
+.scroll-top:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.scroll-top__icon {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Dealership-Specific Styles */
+.hero--dealership {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(30, 64, 175, 0.75) 100%),
+                url('../assets/images/lance-asper-Wl6OeSGyOf4-unsplash.jpg') center/cover no-repeat;
+    min-height: 60vh;
+    position: relative;
+}
+
+.hero__search-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    max-width: 900px;
+    margin: var(--spacing-2xl) auto 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero__filter {
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Vehicle Cards */
+.inventory__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.vehicle-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.vehicle-card__image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--color-gray-200);
+}
+
+.vehicle-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.vehicle-card__badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+}
+
+.vehicle-card__badge--used {
+    background-color: var(--color-secondary);
+}
+
+.vehicle-card__content {
+    padding: var(--spacing-xl);
+}
+
+.vehicle-card__title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-900);
+}
+
+.vehicle-card__specs {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+}
+
+.vehicle-card__price-amount {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+.vehicle-card__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* Financing Section */
+.financing {
+    background-color: var(--color-gray-50);
+}
+
+.financing__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.financing__benefits {
+    list-style: none;
+    margin: var(--spacing-xl) 0;
+}
+
+.financing__benefits li {
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+}
+
+.calculator {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.calculator__field {
+    margin-bottom: var(--spacing-lg);
+}
+
+.calculator__field label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-900);
+}
+
+.calculator__input {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+}
+
+.calculator__result {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--color-primary);
+}
+
+.calculator__payment {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray-900);
+}
+
+/* Service Department */
+.service-dept__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-card__icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.service-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-900);
+}
+
+.service-card p {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+}
+
+.service-dept__cta,
+.inventory__cta {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .financing__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero__search-bar {
+        flex-direction: column;
+    }
+    
+    .hero__filter {
+        width: 100%;
+    }
+}
+
