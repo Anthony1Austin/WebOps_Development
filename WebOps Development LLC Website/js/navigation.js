@@ -3,12 +3,17 @@
  */
 
 import { scrollToElement } from './utils.js';
+import { templates } from './templates.js';
 
 export function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav__link');
+    const navDropdownItems = document.querySelectorAll('.nav__item--dropdown');
     const header = document.getElementById('header');
+
+    // Initialize templates dropdown
+    initTemplatesDropdown();
 
     // Mobile menu toggle
     if (navToggle) {
@@ -18,6 +23,33 @@ export function initNavigation() {
             navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
         });
     }
+
+    // Handle dropdown menus
+    navDropdownItems.forEach(item => {
+        const dropdownLink = item.querySelector('.nav__link');
+        
+        // Desktop: hover to show dropdown
+        item.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 968) {
+                item.classList.add('active');
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 968) {
+                item.classList.remove('active');
+            }
+        });
+        
+        // Mobile: click to toggle dropdown (prevent default scroll)
+        dropdownLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                e.stopPropagation();
+                item.classList.toggle('active');
+            }
+        });
+    });
 
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
@@ -36,6 +68,11 @@ export function initNavigation() {
                     navToggle.classList.remove('active');
                     navToggle.setAttribute('aria-expanded', 'false');
                     
+                    // Close all dropdowns
+                    navDropdownItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
                     // Scroll to section
                     scrollToElement(targetElement, header.offsetHeight);
                     
@@ -44,6 +81,53 @@ export function initNavigation() {
                 }
             }
         });
+    });
+
+    // Handle dropdown link clicks
+    const dropdownLinks = document.querySelectorAll('.nav__dropdown-link');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    
+                    // Close all dropdowns
+                    navDropdownItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Scroll to section
+                    scrollToElement(targetElement, header.offsetHeight);
+                    
+                    // Update active link
+                    const mainLink = document.querySelector(`.nav__link[href="${href}"]`);
+                    if (mainLink) {
+                        updateActiveLink(mainLink);
+                    }
+                }
+            }
+        });
+    });
+
+    // Handle template dropdown item links (delegate event handling)
+    document.addEventListener('click', (e) => {
+        const templateLink = e.target.closest('.nav__dropdown-template-link');
+        if (templateLink) {
+            // Template links already have target="_blank", so they'll open in new tab
+            // Just close the dropdown
+            navDropdownItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
     });
 
     // Update active link on scroll
@@ -85,5 +169,50 @@ function updateActiveLink(activeLink) {
         link.classList.remove('active');
     });
     activeLink.classList.add('active');
+}
+
+function initTemplatesDropdown() {
+    const templatesDropdown = document.getElementById('templates-dropdown');
+    if (!templatesDropdown || !templates) return;
+
+    // Clear existing content
+    templatesDropdown.innerHTML = '';
+
+    // Add "View All Templates" link
+    const viewAllItem = document.createElement('li');
+    viewAllItem.innerHTML = `
+        <a href="#templates" class="nav__dropdown-link nav__dropdown-link--view-all">
+            View All Templates
+        </a>
+    `;
+    templatesDropdown.appendChild(viewAllItem);
+
+    // Add each template as a dropdown item
+    templates.forEach(template => {
+        const listItem = document.createElement('li');
+        listItem.className = 'nav__dropdown-template-item';
+        
+        // Use the image path from template data
+        const imageUrl = template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+        
+        listItem.innerHTML = `
+            <div class="nav__dropdown-template-image">
+                <img src="${imageUrl}" alt="${template.name} preview" loading="lazy">
+            </div>
+            <div class="nav__dropdown-template-content">
+                <div class="nav__dropdown-template-name">${template.name}</div>
+                <div class="nav__dropdown-template-features">
+                    ${template.features.slice(0, 2).map(feature => 
+                        `<span class="nav__dropdown-template-feature">${feature}</span>`
+                    ).join('')}
+                </div>
+                <a href="${template.path}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
+                    View Template
+                </a>
+            </div>
+        `;
+        
+        templatesDropdown.appendChild(listItem);
+    });
 }
 
