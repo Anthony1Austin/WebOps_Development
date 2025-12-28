@@ -1,0 +1,9 @@
+{
+  "name": "webops-development-website",
+  "version": "1.0.0",
+  "description": "WebOps Development LLC Website",
+  "dependencies": {
+    "resend": "^3.0.0"
+  }
+}
+
