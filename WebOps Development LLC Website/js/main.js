@@ -76,19 +76,76 @@ function initFormHandling() {
     }
 }
 
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const form = e.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
     
-    // Here you would typically send data to a server
-    console.log('Form submitted:', data);
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
     
-    // Show success message
-    alert('Thank you for your message! We will get back to you within 24 hours.');
+    // Remove any existing messages
+    const existingMessage = document.querySelector('.form__message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
     
-    // Reset form
-    e.target.reset();
+    try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        // Send to API endpoint
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        
+        const result = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(result.error || 'Failed to send message');
+        }
+        
+        // Show success message
+        showFormMessage('success', 'Thank you for your message! We will get back to you within 24 hours.');
+        
+        // Reset form
+        form.reset();
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showFormMessage('error', 'Sorry, there was an error sending your message. Please try again or contact us directly at info@webopsdev.com');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
+}
+
+function showFormMessage(type, message) {
+    // Create message element
+    const messageEl = document.createElement('div');
+    messageEl.className = `form__message form__message--${type}`;
+    messageEl.textContent = message;
+    
+    // Insert before submit button
+    const form = document.getElementById('contact-form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    form.insertBefore(messageEl, submitButton);
+    
+    // Scroll to message
+    messageEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
+    // Auto-remove success messages after 5 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            messageEl.remove();
+        }, 5000);
+    }
 }
 
