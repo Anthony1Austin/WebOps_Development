@@ -1,9 +1,10 @@
 {
   "buildCommand": null,
   "outputDirectory": "WebOps Development LLC Website",
-  "functions": {
-    "api/**/*.js": {
-      "includeFiles": "**/*.js"
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     }
-  }
+  ]
 }
