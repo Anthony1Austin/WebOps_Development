@@ -46,7 +46,7 @@ WebOps Development LLC Website/
 ### Update Company Information
 
 1. **Contact Information** - Update in `index.html`:
-   - Email: `info@webopsdev.com`
+   - Email: `info@webopsdevelopment.com`
    - Phone: `+1 (XXX) XXX-XXXX`
    - Address (if applicable)
 

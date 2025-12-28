@@ -14,5 +14,5 @@ Allow: /js/
 Allow: /assets/
 
 # Sitemap location
-Sitemap: https://webopsdev.com/sitemap.xml
+Sitemap: https://webopsdevelopment.com/sitemap.xml
 

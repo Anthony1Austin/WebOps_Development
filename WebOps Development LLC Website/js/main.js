@@ -119,7 +119,7 @@ async function handleFormSubmit(e) {
         form.reset();
     } catch (error) {
         console.error('Form submission error:', error);
-        showFormMessage('error', 'Sorry, there was an error sending your message. Please try again or contact us directly at info@webopsdev.com');
+        showFormMessage('error', 'Sorry, there was an error sending your message. Please try again or contact us directly at info@webopsdevelopment.com');
     } finally {
         // Re-enable button
         submitButton.disabled = false;
