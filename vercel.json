@@ -1,35 +1,4 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/WebOps Development LLC Website/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/WebOps Development LLC Website/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "buildCommand": null,
+  "outputDirectory": "WebOps Development LLC Website"
 }
-
