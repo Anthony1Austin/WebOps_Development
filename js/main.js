@@ -93,6 +93,19 @@ async function handleFormSubmit(e) {
         existingMessage.remove();
     }
     
+    // Validate email format
+    const emailInput = form.querySelector('#email');
+    const emailValue = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailPattern.test(emailValue)) {
+        showFormMessage('error', 'Please enter a valid email address.');
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+        emailInput.focus();
+        return;
+    }
+    
     try {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);

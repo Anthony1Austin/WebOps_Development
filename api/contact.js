@@ -9,24 +9,40 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, 'project-type': projectType, message } = req.body;
+    const { 'first-name': firstName, 'last-name': lastName, email, phone, 'project-type': projectType, message } = req.body;
 
     // Validate required fields
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Missing required fields' });
+    if (!firstName || !lastName || !email || !phone || !projectType || !message) {
+      return res.status(400).json({ error: 'All fields are required' });
     }
+
+    // Validate email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      return res.status(400).json({ error: 'Invalid email address format' });
+    }
+
+    // Validate phone format (basic validation)
+    const phonePattern = /^[0-9+\-().\s]+$/;
+    if (!phonePattern.test(phone)) {
+      return res.status(400).json({ error: 'Invalid phone number format' });
+    }
+
+    const fullName = `${firstName} ${lastName}`;
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from:'WebOps Development <info@webopsdevelopment.com>', // Update with your verified domain if you have one
-      to: ['info@webopsdevelopment.com'], // Your email address
-      subject: `New Contact Form Submission - ${projectType || 'General Inquiry'}`,
+      from: 'WebOps Development <info@webopsdevelopment.com>',
+      to: ['info@webopsdevelopment.com'],
+      subject: `New Contact Form Submission - ${projectType}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Full Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-        <p><strong>Project Type:</strong> ${projectType || 'Not specified'}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Project Type:</strong> ${projectType}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
