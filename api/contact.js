@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'WebOps Development <onboarding@resend.dev>', // Update with your verified domain if you have one
+      from:'WebOps Development <info@webopsdevelopment.com>', // Update with your verified domain if you have one
       to: ['info@webopsdevelopment.com'], // Your email address
       subject: `New Contact Form Submission - ${projectType || 'General Inquiry'}`,
       html: `
