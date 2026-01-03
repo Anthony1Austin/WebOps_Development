@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebSite">
 <head>
-    <base id="base-tag" href="./">
-    <script>
-        // Dynamically set base href to current directory
-        (function() {
-            const base = document.getElementById('base-tag');
-            if (base) {
-                const path = window.location.pathname;
-                const basePath = path.substring(0, path.lastIndexOf('/') + 1);
-                base.href = basePath;
-            }
-        })();
-    </script>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
