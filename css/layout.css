@@ -11,6 +11,17 @@
     position: relative;
 }
 
+/* Alternating section backgrounds for visual interest */
+.section:nth-child(even):not(.hero):not(.cta):not(.contact) {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.02) 0%, 
+        rgba(20, 184, 166, 0.02) 100%);
+}
+
+.section:nth-child(odd):not(.hero):not(.cta):not(.contact):not(.about) {
+    background-color: var(--color-white);
+}
+
 .section__header {
     text-align: center;
     margin-bottom: var(--spacing-4xl);

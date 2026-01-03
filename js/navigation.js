@@ -56,7 +56,7 @@ export function initNavigation() {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             
-            // Only handle anchor links
+            // Handle anchor links (same page)
             if (href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
@@ -79,6 +79,14 @@ export function initNavigation() {
                     // Update active link
                     updateActiveLink(link);
                 }
+            } else if (href.startsWith('/') && !href.includes('#')) {
+                // Handle page links - close mobile menu and dropdowns
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navDropdownItems.forEach(item => {
+                    item.classList.remove('active');
+                });
             }
         });
     });
@@ -89,6 +97,7 @@ export function initNavigation() {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             
+            // Handle anchor links (same page)
             if (href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
@@ -114,6 +123,23 @@ export function initNavigation() {
                         updateActiveLink(mainLink);
                     }
                 }
+            } else if (href.includes('#')) {
+                // Handle page links with anchor (e.g., /services.html#web-design)
+                // Let the browser handle navigation, but close menus
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navDropdownItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            } else if (href.startsWith('/')) {
+                // Handle page links - close menus
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navDropdownItems.forEach(item => {
+                    item.classList.remove('active');
+                });
             }
         });
     });
@@ -130,8 +156,13 @@ export function initNavigation() {
         }
     });
 
-    // Update active link on scroll
-    window.addEventListener('scroll', updateActiveLinkOnScroll);
+    // Update active link on scroll (only for single-page)
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        window.addEventListener('scroll', updateActiveLinkOnScroll);
+    }
+    
+    // Set active link based on current page
+    setActiveLinkForCurrentPage();
 
     // Header scroll effect
     window.addEventListener('scroll', () => {
@@ -171,6 +202,27 @@ function updateActiveLink(activeLink) {
     activeLink.classList.add('active');
 }
 
+function setActiveLinkForCurrentPage() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav__link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.remove('active');
+        
+        // Check if this link matches the current page
+        if (href === currentPath || 
+            (currentPath === '/' && (href === '/' || href === '/index.html' || href === 'index.html')) ||
+            (currentPath.includes('templates') && href.includes('templates')) ||
+            (currentPath.includes('portfolio') && href.includes('portfolio')) ||
+            (currentPath.includes('services') && href.includes('services')) ||
+            (currentPath.includes('about') && href.includes('about')) ||
+            (currentPath.includes('contact') && href.includes('contact'))) {
+            link.classList.add('active');
+        }
+    });
+}
+
 function initTemplatesDropdown() {
     const templatesDropdown = document.getElementById('templates-dropdown');
     if (!templatesDropdown || !templates) return;
@@ -181,7 +233,7 @@ function initTemplatesDropdown() {
     // Add "View All Templates" link
     const viewAllItem = document.createElement('li');
     viewAllItem.innerHTML = `
-        <a href="#templates" class="nav__dropdown-link nav__dropdown-link--view-all">
+        <a href="/templates.html" class="nav__dropdown-link nav__dropdown-link--view-all">
             View All Templates
         </a>
     `;
@@ -206,7 +258,7 @@ function initTemplatesDropdown() {
                         `<span class="nav__dropdown-template-feature">${feature}</span>`
                     ).join('')}
                 </div>
-                <a href="${template.path}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
+                <a href="${encodeURI(template.path)}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
                     View Template
                 </a>
             </div>

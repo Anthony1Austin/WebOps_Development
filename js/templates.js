@@ -10,7 +10,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Easily migratable to Next.js, React, Vue, or any framework",
         color: "#0d9488",
-        path: "templates/blog-website/",
+        path: "WebOps Development LLC Website/templates/blog-website/",
         badge: "Content",
         image: "assets/images/templates/blog-website-featured.jpg"
     },
@@ -21,7 +21,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Framework-agnostic - works with any backend or framework",
         color: "#1e3a8a",
-        path: "templates/business-websites/",
+        path: "WebOps Development LLC Website/templates/business-websites/",
         badge: "Corporate",
         image: "assets/images/templates/business-websites-hero.jpg"
     },
@@ -32,7 +32,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Ready for React, Vue, or framework integration",
         color: "#2563eb",
-        path: "templates/dealership-website/",
+        path: "WebOps Development LLC Website/templates/dealership-website/",
         badge: "Automotive",
         image: "assets/images/templates/dealership-website-hero.jpg"
     },
@@ -43,7 +43,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Easily enhanced with Next.js, Vue.js, Ruby on Rails, or any e-commerce backend",
         color: "#9333ea",
-        path: "templates/e-commerce-website/",
+        path: "WebOps Development LLC Website/templates/e-commerce-website/",
         badge: "Retail",
         image: "assets/images/templates/e-commerce-website-preview.jpg"
     },
@@ -54,7 +54,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Framework-agnostic foundation",
         color: "#ec4899",
-        path: "templates/service-oriented-website/",
+        path: "WebOps Development LLC Website/templates/service-oriented-website/",
         badge: "Service",
         image: "assets/images/templates/service-oriented-website-preview.jpg"
     },
@@ -65,7 +65,7 @@ export const templates = [
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Ready for React, Vue, or any property management backend",
         color: "#1e3a8a",
-        path: "templates/property-management/",
+        path: "WebOps Development LLC Website/templates/property-management/",
         badge: "Real Estate",
         image: "assets/images/templates/property-management-preview.jpg"
     }
@@ -111,7 +111,7 @@ function createTemplateCard(template, index) {
                 </div>
             </div>
             <div class="template-card__actions">
-                <a href="${template.path}" class="template-card__link" target="_blank" style="background-color: ${template.color}">
+                <a href="${encodeURI(template.path)}" class="template-card__link" target="_blank" style="background-color: ${template.color}">
                     View Template
                 </a>
             </div>
