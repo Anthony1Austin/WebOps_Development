@@ -4,6 +4,17 @@
 
 export const templates = [
     {
+        name: "Special Event Designs",
+        description: "Modern event planning and floral design website featuring interactive calendar booking, portfolio galleries, service showcases, and client testimonials. Perfect for event planners, florists, and wedding coordinators.",
+        features: ["Calendar Booking", "Portfolio Gallery", "Service Showcase"],
+        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
+        frameworkReady: "Built with modern web standards - ready for production deployment",
+        color: "#dc2626",
+        path: "WebOps Development LLC Website/templates/special-event-designs/",
+        badge: "Events",
+        image: "assets/images/templates/special-event-designs-preview.jpg"
+    },
+    {
         name: "Blog Website",
         description: "Perfect for content creators, writers, and businesses sharing regular updates. Features article layouts, categories, and search functionality.",
         features: ["SEO Optimized", "Responsive", "Category System"],
