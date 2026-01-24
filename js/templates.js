@@ -15,6 +15,17 @@ export const templates = [
         image: "assets/images/templates/special-event-designs-preview.jpg"
     },
     {
+        name: "Neptune Pressure Washing",
+        description: "Professional pressure washing service website with interactive house visualization, service bubbles, before/after gallery, trust badges, and comprehensive service listings. Perfect for exterior cleaning businesses, power washing services, and property maintenance companies.",
+        features: ["Interactive House", "Service Bubbles", "Before/After Gallery"],
+        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
+        frameworkReady: "Built with modern web standards - ready for production deployment",
+        color: "#1e3a5f",
+        path: "WebOps Development LLC Website/templates/neptune-pressure-washing/",
+        badge: "Service",
+        image: "assets/images/templates/neptune-pressure-washing-preview.jpg"
+    },
+    {
         name: "Blog Website",
         description: "Perfect for content creators, writers, and businesses sharing regular updates. Features article layouts, categories, and search functionality.",
         features: ["SEO Optimized", "Responsive", "Category System"],

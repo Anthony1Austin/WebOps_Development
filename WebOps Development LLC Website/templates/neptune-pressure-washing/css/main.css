@@ -1,0 +1,41 @@
+/* Main CSS - Import all stylesheets */
+@import url('./reset.css');
+@import url('./variables.css');
+@import url('./base.css');
+@import url('./layout.css');
+@import url('./components.css');
+@import url('./utilities.css');
+
+/* Additional Global Styles */
+body {
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--color-neptune-gold);
+    color: var(--color-neptune-dark-blue);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-neptune-blue);
+    border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-neptune-dark-blue);
+}
