@@ -857,6 +857,21 @@
     margin-top: var(--spacing-2xl);
 }
 
+/* Force 5 expertise cards in one row on large screens */
+@media (min-width: 1280px) {
+    .expertise__grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .expertise__item {
+        padding: var(--spacing-lg);
+    }
+
+    .expertise__icon {
+        font-size: var(--font-size-3xl);
+    }
+}
+
 .expertise__item {
     background-color: var(--color-white);
     padding: var(--spacing-xl);
