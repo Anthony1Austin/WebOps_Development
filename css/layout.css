@@ -501,6 +501,7 @@
     gap: var(--spacing-lg);
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
 }
 
 .hero__scroll-indicator {
