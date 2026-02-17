@@ -14,12 +14,15 @@
 /* Alternating section backgrounds for visual interest */
 .section:nth-child(even):not(.hero):not(.cta):not(.contact) {
     background: linear-gradient(135deg, 
-        rgba(37, 99, 235, 0.02) 0%, 
-        rgba(20, 184, 166, 0.02) 100%);
+        rgba(37, 99, 235, 0.10) 0%, 
+        rgba(20, 184, 166, 0.10) 100%);
 }
 
 .section:nth-child(odd):not(.hero):not(.cta):not(.contact):not(.about) {
-    background-color: var(--color-white);
+    /* Slight translucency so the site background shows through */
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.62) 0%,
+        rgba(255, 255, 255, 0.82) 100%);
 }
 
 .section__header {
@@ -462,6 +465,10 @@
     margin-bottom: var(--spacing-3xl);
     color: rgba(255, 255, 255, 0.95);
     line-height: var(--line-height-relaxed);
+    font-weight: var(--font-weight-semibold);
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.55),
+        0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .hero__stats {
@@ -520,10 +527,10 @@
 
 /* Footer */
 .footer {
-    background-color: var(--color-gray-900);
+    background-color: rgba(0, 0, 0, 0.95);
     color: var(--color-gray-300);
     padding: var(--spacing-4xl) 0 var(--spacing-xl);
-    margin-top: var(--spacing-5xl);
+    margin-top: 0;
 }
 
 .footer__content {
@@ -583,7 +590,7 @@
 
 .footer__bottom {
     padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--color-gray-800);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
 }
 

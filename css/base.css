@@ -9,7 +9,13 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
     color: var(--color-gray-900);
-    background-color: var(--color-white);
+    /* Vibrant studio background */
+    background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(37, 99, 235, 0.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(20, 184, 166, 0.18), transparent 60%),
+        radial-gradient(1000px 700px at 50% 95%, rgba(245, 158, 11, 0.16), transparent 65%),
+        radial-gradient(900px 650px at 50% 55%, rgba(59, 130, 246, 0.10), transparent 62%),
+        var(--color-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
