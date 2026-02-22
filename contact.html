@@ -21,6 +21,12 @@
     <meta property="og:description" content="Contact WebOps Development LLC for a free consultation and custom quote.">
     <meta property="og:image" content="https://webopsdevelopment.com/assets/images/og-image.jpg">
     
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/branding/webops-icon-A-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/branding/webops-icon-A-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/branding/webops-icon-A-180x180.png">
+
     <link rel="stylesheet" href="css/main.css">
     
     <!-- Structured Data -->
@@ -64,8 +70,20 @@
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="nav__brand">
                 <a href="/" class="nav__logo" id="logo-link">
-                    <span class="logo-text">WebOps</span>
-                    <span class="logo-suffix">Development</span>
+                    <svg class="brandmark" viewBox="0 0 120 60" role="img" aria-label="WebOps Development logo">
+                        <path d="M10 10 L25 52 L40 22 L55 52 L70 10" fill="none" stroke="#2563EB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M78 10 V52 Q108 48 108 31 Q108 14 78 10 Z" fill="none" stroke="#14B8A6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26 28 L40 40 L56 24" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="26" cy="28" r="4" fill="#2563EB"/>
+                        <circle cx="40" cy="40" r="4" fill="#14B8A6"/>
+                        <circle cx="56" cy="24" r="4" fill="#F59E0B"/>
+                        <path d="M70 30 H78" fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="78" cy="30" r="3.5" fill="#2563EB"/>
+                    </svg>
+                    <span class="brandword" aria-hidden="true">
+                        <span class="brandword__main">WebOps</span>
+                        <span class="brandword__sub">Development</span>
+                    </span>
                 </a>
             </div>
             
@@ -204,7 +222,24 @@
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">
-                    <h3 class="footer__logo">WebOps Development LLC</h3>
+                    <a href="/" class="footer__logo" aria-label="WebOps Development Home">
+                        <span class="nav__logo">
+                            <svg class="brandmark" viewBox="0 0 120 60" role="img" aria-label="WebOps Development logo">
+                                <path d="M10 10 L25 52 L40 22 L55 52 L70 10" fill="none" stroke="#2563EB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M78 10 V52 Q108 48 108 31 Q108 14 78 10 Z" fill="none" stroke="#14B8A6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M26 28 L40 40 L56 24" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="26" cy="28" r="4" fill="#2563EB"/>
+                                <circle cx="40" cy="40" r="4" fill="#14B8A6"/>
+                                <circle cx="56" cy="24" r="4" fill="#F59E0B"/>
+                                <path d="M70 30 H78" fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="78" cy="30" r="3.5" fill="#2563EB"/>
+                            </svg>
+                            <span class="brandword" aria-hidden="true">
+                                <span class="brandword__main">WebOps</span>
+                                <span class="brandword__sub">Development</span>
+                            </span>
+                        </span>
+                    </a>
                     <p class="footer__tagline">Professional websites that drive results</p>
                 </div>
                 <div class="footer__links">

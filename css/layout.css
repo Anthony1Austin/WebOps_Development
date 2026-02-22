@@ -79,10 +79,38 @@
 
 .nav__logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: var(--spacing-xs);
     transition: color var(--transition-fast);
     color: var(--color-white);
+}
+
+/* Brand logo (SVG mark + CSS wordmark) */
+.brandmark {
+    height: 44px;
+    width: auto;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.brandword {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    line-height: 1;
+}
+
+.brandword__main {
+    color: var(--color-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: -0.2px;
+}
+
+.brandword__sub {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
 }
 
 .logo-text {
@@ -550,6 +578,39 @@
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
     margin-bottom: var(--spacing-md);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.footer__brand .brandmark {
+    height: 54px;
+}
+
+.footer__brand .brandword__main {
+    font-size: var(--font-size-2xl);
+}
+
+.footer__brand .brandword__sub {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer__logo .nav__logo {
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 968px) {
+    .brandmark {
+        height: 40px;
+    }
+
+    .brandword__main {
+        font-size: var(--font-size-xl);
+    }
+
+    .brandword__sub {
+        font-size: var(--font-size-base);
+    }
 }
 
 .footer__tagline {
