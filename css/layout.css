@@ -408,7 +408,7 @@
     right: 0;
     bottom: 0;
     z-index: 0;
-    background-image: url("/assets/images/portfolio/boliviainteligente-yGLFxiTaNvs-unsplash.jpg");
+    background-image: url("/assets/images/portfolio/webops-hero-option-1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -478,7 +478,10 @@
 
 .hero__title-line {
     display: block;
-    color: var(--color-primary);
+    color: var(--color-secondary);
+    text-shadow:
+        0 3px 16px rgba(0, 0, 0, 0.55),
+        0 1px 0 rgba(0, 0, 0, 0.65);
 }
 
 .hero__title-line--highlight {
@@ -530,6 +533,18 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: var(--spacing-2xl);
+}
+
+/* Hero CTA: use accent (orange/yellow) */
+.hero .btn--primary {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    border-color: transparent;
+}
+
+.hero .btn--primary:hover {
+    background-color: var(--color-accent-dark);
+    color: var(--color-black);
 }
 
 .hero__scroll-indicator {
