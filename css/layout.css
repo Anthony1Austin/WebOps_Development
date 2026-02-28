@@ -698,6 +698,15 @@
         left: 0;
     }
 
+    .nav__menu .nav__link {
+        color: var(--color-gray-900);
+    }
+
+    .nav__menu .nav__link:hover,
+    .nav__menu .nav__link.active {
+        color: var(--color-primary);
+    }
+
     .nav__item {
         width: 100%;
     }
