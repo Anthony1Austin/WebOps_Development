@@ -710,7 +710,8 @@
         box-shadow: none;
         border: none;
         margin-top: var(--spacing-sm);
-        margin-left: var(--spacing-lg);
+        margin-left: 0;
+        width: 100%;
         padding: 0;
         background-color: var(--color-gray-50);
         border-radius: var(--border-radius-md);
@@ -745,6 +746,17 @@
         width: 100%;
         height: 120px;
         flex: none;
+    }
+
+    .nav__dropdown li {
+        width: 100%;
+    }
+
+    .nav__dropdown-link {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        white-space: normal;
     }
 
     .nav__toggle {
