@@ -41,12 +41,18 @@ export function initNavigation() {
             }
         });
         
-        // Mobile: click to toggle dropdown (prevent default scroll)
+        // Mobile: first tap opens dropdown, second tap navigates
         dropdownLink.addEventListener('click', (e) => {
             if (window.innerWidth <= 968) {
-                e.preventDefault();
-                e.stopPropagation();
-                item.classList.toggle('active');
+                const isActive = item.classList.contains('active');
+                
+                if (!isActive) {
+                    // First tap: open dropdown instead of navigating
+                    e.preventDefault();
+                    e.stopPropagation();
+                    item.classList.add('active');
+                }
+                // If already active, allow navigation on second tap
             }
         });
     });
