@@ -49,7 +49,8 @@ export function initNavigation() {
                 if (!isActive) {
                     // First tap: open dropdown instead of navigating
                     e.preventDefault();
-                    e.stopPropagation();
+                    // Prevent other click handlers on this link from running
+                    e.stopImmediatePropagation();
                     item.classList.add('active');
                 }
                 // If already active, allow navigation on second tap
@@ -61,6 +62,13 @@ export function initNavigation() {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
+            const parentDropdown = link.closest('.nav__item--dropdown');
+            
+            // On mobile: if this is a dropdown parent and it's not open yet,
+            // let the dedicated dropdown handler control it (do nothing here).
+            if (parentDropdown && window.innerWidth <= 968 && !parentDropdown.classList.contains('active')) {
+                return;
+            }
             
             // Handle anchor links (same page)
             if (href.startsWith('#')) {
