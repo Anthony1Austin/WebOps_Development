@@ -101,6 +101,8 @@ export function initTemplates() {
         const card = createTemplateCard(template, index);
         templatesGrid.appendChild(card);
     });
+
+    initTemplatesReveal();
 }
 
 function createTemplateCard(template, index) {
@@ -118,24 +120,26 @@ function createTemplateCard(template, index) {
         </div>
         <div class="template-card__content">
             <h3 class="template-card__title">${template.name}</h3>
-            <p class="template-card__description">${template.description}</p>
-            <div class="template-card__features">
-                ${template.features.map(feature => 
-                    `<span class="template-card__feature">${feature}</span>`
-                ).join('')}
-            </div>
-            <div class="template-card__tech">
-                <div class="template-card__tech-stack">
-                    <strong>Tech Stack:</strong> ${template.techStack}
+            <div class="template-card__reveal">
+                <p class="template-card__description">${template.description}</p>
+                <div class="template-card__features">
+                    ${template.features.map(feature => 
+                        `<span class="template-card__feature">${feature}</span>`
+                    ).join('')}
                 </div>
-                <div class="template-card__framework-ready">
-                    <strong>Framework Ready:</strong> ${template.frameworkReady}
+                <div class="template-card__tech">
+                    <div class="template-card__tech-stack">
+                        <strong>Tech Stack:</strong> ${template.techStack}
+                    </div>
+                    <div class="template-card__framework-ready">
+                        <strong>Framework Ready:</strong> ${template.frameworkReady}
+                    </div>
                 </div>
-            </div>
-            <div class="template-card__actions">
-                <a href="${encodeURI(template.path)}" class="template-card__link" target="_blank" style="background-color: ${template.color}">
-                    View Template
-                </a>
+                <div class="template-card__actions">
+                    <a href="${encodeURI(template.path)}" class="template-card__link" target="_blank" style="background-color: ${template.color}">
+                        View Template
+                    </a>
+                </div>
             </div>
         </div>
     `;
@@ -146,5 +150,97 @@ function createTemplateCard(template, index) {
     });
 
     return card;
+}
+
+/**
+ * GSAP roll-up reveal on hover - Our Templates section only.
+ * Only the hovered card is expanded; all others stay collapsed.
+ */
+export function initTemplatesReveal() {
+    const grid = document.getElementById('templates-grid');
+    if (!grid || typeof window.gsap === 'undefined') return;
+
+    const cards = grid.querySelectorAll('.template-card');
+    /** @type {HTMLElement | null} - The one reveal that is currently open (only one at a time). */
+    let activeReveal = null;
+
+    function forceCloseReveal(reveal) {
+        if (!reveal) return;
+        const children = reveal.querySelectorAll('.template-card__description, .template-card__features, .template-card__tech, .template-card__actions');
+        window.gsap.killTweensOf(reveal);
+        window.gsap.killTweensOf(children);
+        window.gsap.set(reveal, { height: 0, opacity: 0, overflow: 'hidden' });
+        window.gsap.set(children, { opacity: 0, y: 10 });
+    }
+
+    cards.forEach((card) => {
+        const reveal = card.querySelector('.template-card__reveal');
+        if (!reveal) return;
+
+        const children = reveal.querySelectorAll('.template-card__description, .template-card__features, .template-card__tech, .template-card__actions');
+        let openTween = null;
+        let closeTween = null;
+        let staggerTween = null;
+
+        function closeThisReveal() {
+            if (activeReveal === reveal) activeReveal = null;
+            if (openTween) openTween.kill();
+            openTween = null;
+            if (staggerTween) staggerTween.kill();
+            staggerTween = null;
+            if (closeTween) closeTween.kill();
+            closeTween = window.gsap.to(reveal, {
+                height: 0,
+                opacity: 0,
+                duration: 0.25,
+                ease: 'power2.in',
+                overflow: 'hidden',
+                onComplete: () => {
+                    closeTween = null;
+                }
+            });
+            window.gsap.set(children, { opacity: 0, y: 10 });
+        }
+
+        function openThisReveal() {
+            if (closeTween) closeTween.kill();
+            closeTween = null;
+            openTween = window.gsap.to(reveal, {
+                height: 'auto',
+                opacity: 1,
+                duration: 0.35,
+                ease: 'power2.out',
+                overflow: 'visible',
+                onComplete: () => {
+                    openTween = null;
+                }
+            });
+            staggerTween = window.gsap.fromTo(children, { opacity: 0, y: 10 }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.25,
+                stagger: 0.04,
+                delay: 0.06,
+                ease: 'power2.out'
+            });
+        }
+
+        card.addEventListener('mouseenter', () => {
+            if (activeReveal === reveal) return;
+            forceCloseReveal(activeReveal);
+            activeReveal = reveal;
+            openThisReveal();
+        });
+
+        card.addEventListener('mouseleave', () => {
+            closeThisReveal();
+        });
+    });
+
+    // Start with all reveals collapsed
+    cards.forEach((card) => {
+        const reveal = card.querySelector('.template-card__reveal');
+        if (reveal) forceCloseReveal(reveal);
+    });
 }
 

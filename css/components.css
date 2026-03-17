@@ -102,6 +102,21 @@
     padding: var(--spacing-xl);
 }
 
+/* Our Templates section: roll-up reveal (GSAP animates height/opacity on hover) */
+.section.templates .template-card__reveal {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.section.templates .template-card__title {
+    margin-bottom: 0;
+}
+
+.section.templates .template-card__reveal .template-card__description {
+    margin-top: var(--spacing-md);
+}
+
 .template-card__title {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);

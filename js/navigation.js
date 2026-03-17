@@ -248,20 +248,13 @@ function initTemplatesDropdown() {
         const imageUrl = template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`;
         
         listItem.innerHTML = `
+            <div class="nav__dropdown-template-name">${template.name}</div>
             <div class="nav__dropdown-template-image">
                 <img src="${imageUrl}" alt="${template.name} preview" loading="lazy">
             </div>
-            <div class="nav__dropdown-template-content">
-                <div class="nav__dropdown-template-name">${template.name}</div>
-                <div class="nav__dropdown-template-features">
-                    ${template.features.slice(0, 2).map(feature => 
-                        `<span class="nav__dropdown-template-feature">${feature}</span>`
-                    ).join('')}
-                </div>
-                <a href="${encodeURI(template.path)}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
-                    View Template
-                </a>
-            </div>
+            <a href="${encodeURI(template.path)}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
+                View Template
+            </a>
         `;
         
         templatesDropdown.appendChild(listItem);
