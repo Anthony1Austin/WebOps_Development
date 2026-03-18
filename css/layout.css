@@ -674,10 +674,10 @@
         height: calc(100vh - var(--header-height));
         background-color: var(--color-white);
         flex-direction: column;
-        padding: var(--spacing-xl) var(--spacing-md);
+        padding: var(--spacing-xl) 0;
         transition: left var(--transition-base);
         box-shadow: var(--shadow-lg);
-        align-items: stretch;
+        align-items: center;
         overflow-y: auto;
     }
 
@@ -695,11 +695,13 @@
     }
 
     .nav__item {
-        width: 100%;
+        width: 90%;
+        max-width: 420px;
     }
 
     .nav__item--dropdown {
-        width: 100%;
+        width: 90%;
+        max-width: 420px;
     }
 
     .nav__dropdown {
