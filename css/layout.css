@@ -723,8 +723,10 @@
     }
 
     .nav__item--dropdown.active .nav__dropdown {
-        max-height: 500px;
+        max-height: min(500px, 70vh);
         padding: var(--spacing-sm) 0;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .nav__dropdown::before {
@@ -757,9 +759,15 @@
     .nav__dropdown-link {
         display: block;
         width: 100%;
-        padding: var(--spacing-sm) var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-lg);
         white-space: normal;
         text-align: left;
+        font-size: var(--font-size-base);
+    }
+
+    .nav__dropdown-template-link {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) 0;
     }
 
     .nav__toggle {
