@@ -109,6 +109,15 @@
     overflow: hidden;
 }
 
+@media (max-width: 968px) {
+    /* On mobile, keep template details + button visible (no hover). */
+    .section.templates .template-card__reveal {
+        height: auto;
+        opacity: 1;
+        overflow: visible;
+    }
+}
+
 .section.templates .template-card__title {
     margin-bottom: 0;
 }

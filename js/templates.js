@@ -102,7 +102,11 @@ export function initTemplates() {
         templatesGrid.appendChild(card);
     });
 
-    initTemplatesReveal();
+    // Hover-based reveals don't work well on touch devices (mobile).
+    const isTouch = window.matchMedia?.('(hover: none), (pointer: coarse)')?.matches;
+    if (!isTouch) {
+        initTemplatesReveal();
+    }
 }
 
 function createTemplateCard(template, index) {
