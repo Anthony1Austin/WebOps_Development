@@ -3,7 +3,7 @@
  */
 
 import { scrollToElement } from './utils.js';
-import { templates } from './templates.js';
+import { getTemplatePrimaryUrl, templates } from './templates.js';
 
 export function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
@@ -244,11 +244,11 @@ function initTemplatesDropdown() {
     // Clear existing content
     templatesDropdown.innerHTML = '';
 
-    // Add "View All Templates" link
+    // Add "View All Website Portfolio" link
     const viewAllItem = document.createElement('li');
     viewAllItem.innerHTML = `
         <a href="/templates.html" class="nav__dropdown-link nav__dropdown-link--view-all">
-            View All Templates
+            View All Website Portfolio
         </a>
     `;
     templatesDropdown.appendChild(viewAllItem);
@@ -266,8 +266,8 @@ function initTemplatesDropdown() {
             <div class="nav__dropdown-template-image">
                 <img src="${imageUrl}" alt="${template.name} preview" loading="lazy">
             </div>
-            <a href="${encodeURI(template.path)}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
-                View Template
+            <a href="${encodeURI(getTemplatePrimaryUrl(template))}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
+                View Website
             </a>
         `;
         

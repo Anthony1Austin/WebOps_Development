@@ -90,8 +90,32 @@ export const templates = [
         path: "WebOps Development LLC Website/templates/property-management/",
         badge: "Real Estate",
         image: "assets/images/templates/property-management-preview.jpg"
+    },
+    {
+        name: "ClubExtreme Volleyball",
+        description: "Professional volleyball club website featuring athlete profiles, event calendar, team information, and registration system.",
+        features: ["Event Calendar", "Athlete Profiles", "Registration System"],
+        techStack: "Custom front-end with modern web standards",
+        frameworkReady: "Production-ready live website deployment",
+        color: "#dc2626",
+        badge: "Sports",
+        image: "assets/images/templates/clubextreme-volleyball.jpg",
+        liveUrl: "https://www.cevohio.org/",
+        demoUrl: ""
     }
 ];
+
+/**
+ * Pick the best URL to link to for a template card.
+ * Best practice ordering:
+ * 1) liveUrl (real published website, including non-Vercel)
+ * 2) demoUrl (stable Vercel alias/redirect while building)
+ * 3) path (local template source fallback)
+ */
+export function getTemplatePrimaryUrl(template) {
+    if (!template) return '';
+    return template.liveUrl || template.demoUrl || template.path || '';
+}
 
 export function initTemplates() {
     const templatesGrid = document.getElementById('templates-grid');
@@ -116,6 +140,8 @@ function createTemplateCard(template, index) {
     
     // Use custom image if provided, otherwise generate from template name
     const imageUrl = template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+    const primaryUrl = getTemplatePrimaryUrl(template);
+    const primaryHref = primaryUrl ? encodeURI(primaryUrl) : '#';
     
     card.innerHTML = `
         <div class="template-card__image" style="background-color: transparent;">
@@ -140,8 +166,8 @@ function createTemplateCard(template, index) {
                     </div>
                 </div>
                 <div class="template-card__actions">
-                    <a href="${encodeURI(template.path)}" class="template-card__link" target="_blank" style="background-color: ${template.color}">
-                        View Template
+                    <a href="${primaryHref}" class="template-card__link" target="_blank" rel="noopener noreferrer" style="background-color: ${template.color}">
+                        View Website
                     </a>
                 </div>
             </div>
