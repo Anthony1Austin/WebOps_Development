@@ -695,13 +695,17 @@
     }
 
     .nav__item {
-        width: 90%;
-        max-width: 420px;
+        width: 82%;
+        max-width: 380px;
+        margin-left: 10%;
+        margin-right: auto;
     }
 
     .nav__item--dropdown {
-        width: 90%;
-        max-width: 420px;
+        width: 82%;
+        max-width: 380px;
+        margin-left: 10%;
+        margin-right: auto;
     }
 
     .nav__dropdown {
@@ -728,7 +732,7 @@
         max-height: min(500px, 70vh);
         padding: var(--spacing-sm) 0;
         overflow-y: auto;
-        overflow-x: hidden;
+        overflow-x: visible;
     }
 
     .nav__dropdown::before {
