@@ -1591,6 +1591,8 @@
     box-shadow: var(--shadow-lg);
     padding: var(--spacing-2xl);
     transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -1666,6 +1668,7 @@
     display: grid;
     gap: var(--spacing-sm);
     color: var(--color-gray-700);
+    flex: 1 1 auto;
 }
 
 .pricing-card__list li {
@@ -1683,7 +1686,8 @@
 }
 
 .pricing-card__cta {
-    margin-top: var(--spacing-xl);
+    margin-top: auto;
+    padding-top: var(--spacing-xl);
 }
 
 .pricing__note {
