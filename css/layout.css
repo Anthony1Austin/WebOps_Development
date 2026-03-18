@@ -695,16 +695,16 @@
     }
 
     .nav__item {
-        width: 68%;
-        max-width: 320px;
-        margin-left: 22%;
+        width: 58%;
+        max-width: 280px;
+        margin-left: 30%;
         margin-right: auto;
     }
 
     .nav__item--dropdown {
-        width: 68%;
-        max-width: 320px;
-        margin-left: 22%;
+        width: 58%;
+        max-width: 280px;
+        margin-left: 30%;
         margin-right: auto;
     }
 
