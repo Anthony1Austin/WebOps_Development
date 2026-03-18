@@ -711,7 +711,10 @@
         border: none;
         margin-top: var(--spacing-sm);
         margin-left: 0;
+        margin-right: 0;
         width: 100%;
+        max-width: 480px;
+        margin-inline: auto;
         padding: 0;
         background-color: var(--color-gray-50);
         border-radius: var(--border-radius-md);
@@ -757,6 +760,7 @@
         width: 100%;
         padding: var(--spacing-sm) var(--spacing-lg);
         white-space: normal;
+        text-align: center;
     }
 
     .nav__toggle {
