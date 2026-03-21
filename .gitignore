@@ -40,6 +40,9 @@ out/
 # Dependencies (if you add package managers later)
 node_modules/
 package-lock.json
+
+# Playwright browser binaries (run: PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers npx playwright install chromium)
+.playwright-browsers/
 yarn.lock
 
 # Temporary files

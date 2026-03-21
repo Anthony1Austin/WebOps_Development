@@ -118,6 +118,19 @@ export const templates = [
     }
 ];
 
+/** Bump when replacing files under assets/images/templates/ so browsers fetch fresh previews. */
+export const TEMPLATE_PREVIEW_ASSET_VERSION = '20260320';
+
+/**
+ * Cache-bust same-origin template preview paths (not absolute URLs).
+ * @param {string} url
+ */
+export function withTemplatePreviewCacheBust(url) {
+    if (!url || /^(https?:)?\/\//i.test(url)) return url;
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}v=${TEMPLATE_PREVIEW_ASSET_VERSION}`;
+}
+
 /**
  * Pick the best URL to link to for a template card.
  * Best practice ordering:
@@ -152,7 +165,9 @@ function createTemplateCard(template, index) {
     card.style.animationDelay = `${index * 0.1}s`;
     
     // Use custom image if provided, otherwise generate from template name
-    const imageUrl = template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+    const imageUrl = withTemplatePreviewCacheBust(
+        template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`
+    );
     const primaryUrl = getTemplatePrimaryUrl(template);
     const primaryHref = primaryUrl ? encodeURI(primaryUrl) : '#';
     

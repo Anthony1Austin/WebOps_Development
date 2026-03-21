@@ -3,7 +3,7 @@
  */
 
 import { scrollToElement } from './utils.js';
-import { getTemplatePrimaryUrl, templates } from './templates.js';
+import { getTemplatePrimaryUrl, templates, withTemplatePreviewCacheBust } from './templates.js';
 
 export function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
@@ -259,7 +259,9 @@ function initTemplatesDropdown() {
         listItem.className = 'nav__dropdown-template-item';
         
         // Use the image path from template data
-        const imageUrl = template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+        const imageUrl = withTemplatePreviewCacheBust(
+            template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`
+        );
         
         listItem.innerHTML = `
             <div class="nav__dropdown-template-name">${template.name}</div>

@@ -4,6 +4,12 @@
   "description": "WebOps Development LLC Website",
   "dependencies": {
     "resend": "^3.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  },
+  "scripts": {
+    "capture:template-previews": "node scripts/capture-template-previews.mjs"
   }
 }
 
