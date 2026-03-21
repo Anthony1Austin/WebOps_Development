@@ -12,7 +12,8 @@ export const templates = [
         color: "#dc2626",
         path: "WebOps Development LLC Website/templates/special-event-designs/",
         badge: "Events",
-        image: "assets/images/templates/special-event-designs-preview.jpg"
+        image: "assets/images/templates/special-event-designs-preview.jpg",
+        demoUrl: "https://special-event-designs-cnnf.vercel.app/"
     },
     {
         name: "Neptune Pressure Washing",
@@ -23,7 +24,19 @@ export const templates = [
         color: "#1e3a5f",
         path: "WebOps Development LLC Website/templates/neptune-pressure-washing/",
         badge: "Service",
-        image: "assets/images/templates/neptune-pressure-washing-preview.jpg"
+        image: "assets/images/templates/neptune-pressure-washing-preview.jpg",
+        demoUrl: "https://neptune-pressure-washing.vercel.app/"
+    },
+    {
+        name: "The Group Sales Network",
+        description: "Hotel group sales task force website: on-demand coverage for on-property and above-property teams, service breakdowns, and clear CTAs for hospitality sales leaders.",
+        features: ["Service Pages", "On-Property / Portfolio Story", "Lead CTAs"],
+        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
+        frameworkReady: "Built with modern web standards - ready for production deployment",
+        color: "#0f766e",
+        badge: "Hospitality",
+        image: "assets/images/templates/the-group-sales-network-preview.jpg",
+        demoUrl: "https://the-group-sales-network.vercel.app/"
     },
     {
         name: "Blog Website",
