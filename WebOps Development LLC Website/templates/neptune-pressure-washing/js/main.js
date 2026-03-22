@@ -22,11 +22,10 @@ function initReviewTicker() {
     const reviewTicker = document.getElementById('review-ticker');
     const marquee = document.getElementById('marquee');
     
-    // Example reviews - replace with actual reviews from your data source
     const reviews = [
-        '"Excellent service! My house looks brand new!" — John D.',
-        '"Professional, reliable, and affordable. Highly recommend!" — Sarah M.',
-        '"Best pressure washing service in Massillon!" — Mike T.'
+        '"Our concrete looks brand new again. Thomas is great to work with!" — Karen T.',
+        '"Neptune did a fantastic job on my house—I would definitely recommend!" — Marilyn P.',
+        '"Very professional & meticulous. My house looks like I had it painted!" — Mary F.'
     ];
     
     // Only show ticker if we have reviews

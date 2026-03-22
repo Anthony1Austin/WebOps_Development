@@ -25,7 +25,7 @@ export const templates = [
         path: "WebOps Development LLC Website/templates/neptune-pressure-washing/",
         badge: "Service",
         image: "assets/images/templates/neptune-pressure-washing-preview.jpg",
-        demoUrl: "https://neptune-pressure-washing.vercel.app/"
+        demoUrl: "https://www.neptunewashpros.com/"
     },
     {
         name: "The Group Sales Network",

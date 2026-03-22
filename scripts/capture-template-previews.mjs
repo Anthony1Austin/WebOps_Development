@@ -19,7 +19,7 @@ const outDir = join(root, 'assets', 'images', 'templates');
 
 const jobs = [
     { url: 'https://special-event-designs-cnnf.vercel.app/', file: 'special-event-designs-preview.jpg' },
-    { url: 'https://neptune-pressure-washing.vercel.app/', file: 'neptune-pressure-washing-preview.jpg' },
+    { url: 'https://www.neptunewashpros.com/', file: 'neptune-pressure-washing-preview.jpg' },
     { url: 'https://the-group-sales-network.vercel.app/', file: 'the-group-sales-network-preview.jpg' }
 ];
 
