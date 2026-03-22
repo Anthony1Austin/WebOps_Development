@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "WebOps Development LLC Website",
   "dependencies": {
+    "@upstash/ratelimit": "^2.0.5",
+    "@upstash/redis": "^1.34.3",
     "resend": "^3.0.0"
   },
   "devDependencies": {

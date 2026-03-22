@@ -9,6 +9,75 @@ import { initTemplates, templates } from './templates.js';
 import { initPortfolio } from './portfolio.js';
 import { getAvailableTimeSlots, formatTime } from './calendar.js';
 
+let turnstileWidgetId = null;
+let turnstileActive = false;
+
+function loadTurnstileScript() {
+    return new Promise((resolve, reject) => {
+        if (window.turnstile) {
+            resolve();
+            return;
+        }
+        const existing = document.querySelector('script[data-turnstile-api]');
+        if (existing) {
+            existing.addEventListener('load', () => resolve());
+            existing.addEventListener('error', reject);
+            return;
+        }
+        const s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true;
+        s.defer = true;
+        s.dataset.turnstileApi = 'true';
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error('Failed to load Turnstile'));
+        document.head.appendChild(s);
+    });
+}
+
+async function setupContactFormTurnstile(form) {
+    turnstileWidgetId = null;
+    turnstileActive = false;
+
+    const existingMessage = form.querySelector('.form__message');
+    if (existingMessage) existingMessage.remove();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    try {
+        const res = await fetch('/api/site-config');
+        const { turnstileSiteKey } = await res.json();
+
+        if (!turnstileSiteKey) {
+            if (submitButton) submitButton.disabled = true;
+            showFormMessage(
+                'error',
+                'The contact form is temporarily unavailable. Please email us at info@webopsdevelopment.com or call (330) 737-1139.'
+            );
+            return;
+        }
+
+        await loadTurnstileScript();
+        const el = document.getElementById('turnstile-widget');
+        if (!el || !window.turnstile) {
+            throw new Error('Turnstile not available');
+        }
+
+        turnstileWidgetId = window.turnstile.render(el, {
+            sitekey: turnstileSiteKey,
+            theme: 'light',
+        });
+        turnstileActive = true;
+        if (submitButton) submitButton.disabled = false;
+    } catch (err) {
+        console.error('Turnstile init:', err);
+        if (submitButton) submitButton.disabled = true;
+        showFormMessage(
+            'error',
+            'Unable to load security verification. Please refresh the page or email info@webopsdevelopment.com.'
+        );
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     // Set logo link based on environment
@@ -41,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize calendar
     initCalendar();
 
-    // Initialize form handling
+    // Initialize form handling (Turnstile loads inside initFormHandling)
     initFormHandling();
 });
 
@@ -168,9 +237,12 @@ function initCalendar() {
 // Form Handling
 function initFormHandling() {
     const contactForm = document.getElementById('contact-form');
-    
+
     if (contactForm) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
         contactForm.addEventListener('submit', handleFormSubmit);
+        setupContactFormTurnstile(contactForm);
     }
 }
 
@@ -203,7 +275,17 @@ async function handleFormSubmit(e) {
         emailInput.focus();
         return;
     }
-    
+
+    if (turnstileActive && window.turnstile) {
+        const token = window.turnstile.getResponse(turnstileWidgetId);
+        if (!token) {
+            showFormMessage('error', 'Please complete the security check below before sending.');
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            return;
+        }
+    }
+
     try {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
@@ -222,7 +304,7 @@ async function handleFormSubmit(e) {
         if (!response.ok) {
             throw new Error(result.error || 'Failed to send message');
         }
-        
+
         // Show success message
         showFormMessage('success', 'Thank you for your message! We\'ve sent a confirmation email with your appointment details. We will contact you to confirm the appointment time.');
         
@@ -236,6 +318,10 @@ async function handleFormSubmit(e) {
         if (timeSelect) {
             timeSelect.innerHTML = '<option value="">Select a date first</option>';
             timeSelect.disabled = false;
+        }
+
+        if (turnstileWidgetId != null && window.turnstile) {
+            window.turnstile.reset(turnstileWidgetId);
         }
     } catch (error) {
         console.error('Form submission error:', error);

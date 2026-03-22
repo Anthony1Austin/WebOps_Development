@@ -1,24 +1,87 @@
 import { Resend } from 'resend';
+import { rateLimitContact } from '../lib/rate-limit.js';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function getClientIp(req) {
+  const xff = req.headers['x-forwarded-for'];
+  if (typeof xff === 'string' && xff.length) {
+    return xff.split(',')[0].trim();
+  }
+  const real = req.headers['x-real-ip'];
+  if (typeof real === 'string') return real.trim();
+  return 'unknown';
+}
+
+async function verifyTurnstileToken(token, remoteip) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    return false;
+  }
+  const body = new URLSearchParams();
+  body.set('secret', secret);
+  body.set('response', token || '');
+  if (remoteip && remoteip !== 'unknown') {
+    body.set('remoteip', remoteip);
+  }
+  const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body,
+  });
+  const data = await r.json();
+  return data.success === true;
+}
+
 export default async function handler(req, res) {
-  // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  if (!process.env.TURNSTILE_SECRET_KEY) {
+    console.error('TURNSTILE_SECRET_KEY is not set');
+    return res.status(503).json({ error: 'Contact form is temporarily unavailable.' });
+  }
+
+  const clientIp = getClientIp(req);
+
   try {
-    const { 
-      'first-name': firstName, 
-      'last-name': lastName, 
-      email, 
-      phone, 
-      'project-type': projectType, 
+    const rate = await rateLimitContact(clientIp);
+    if (!rate.success) {
+      const retryAfter =
+        typeof rate.reset === 'number' && rate.reset > 0
+          ? Math.max(1, Math.ceil((rate.reset - Date.now()) / 1000))
+          : 900;
+      res.setHeader('Retry-After', String(retryAfter));
+      return res.status(429).json({ error: 'Too many submissions. Please try again later.' });
+    }
+  } catch (e) {
+    console.error('Rate limit error (allowing request):', e);
+  }
+
+  try {
+    const {
+      'first-name': firstName,
+      'last-name': lastName,
+      email,
+      phone,
+      website: honeypotWebsite,
+      'project-type': projectType,
       'appointment-date': appointmentDate,
       'appointment-time': appointmentTime,
-      message 
+      message,
+      'cf-turnstile-response': turnstileToken,
     } = req.body;
+
+    // Honeypot: bots often fill this; respond success without sending mail
+    if (honeypotWebsite != null && String(honeypotWebsite).trim() !== '') {
+      return res.status(200).json({ success: true });
+    }
+
+    const turnstileOk = await verifyTurnstileToken(turnstileToken, clientIp);
+    if (!turnstileOk) {
+      return res.status(400).json({ error: 'Verification failed. Please refresh the page and try again.' });
+    }
 
     // Validate required fields (appointment is optional)
     if (!firstName || !lastName || !email || !phone || !projectType || !message) {
@@ -38,22 +101,22 @@ export default async function handler(req, res) {
     }
 
     const fullName = `${firstName} ${lastName}`;
-    
+
     // Format appointment date/time (if provided)
     let formattedDate = '';
     let formattedTime = '';
-    
+
     if (appointmentDate && appointmentTime) {
       const appointmentDateObj = new Date(appointmentDate);
       formattedDate = appointmentDateObj.toLocaleDateString('en-US', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
       });
-      
+
       const [hours, minutes] = appointmentTime.split(':');
-      const hour = parseInt(hours);
+      const hour = parseInt(hours, 10);
       const ampm = hour >= 12 ? 'PM' : 'AM';
       const displayHour = hour % 12 || 12;
       formattedTime = `${displayHour}:${minutes} ${ampm}`;
@@ -115,24 +178,21 @@ export default async function handler(req, res) {
     // Store the appointment (if provided)
     if (appointmentDate && appointmentTime) {
       try {
-        // Determine the base URL for the API call
         const protocol = req.headers['x-forwarded-proto'] || 'https';
         const host = req.headers.host || process.env.VERCEL_URL || 'localhost:3000';
         const baseUrl = `${protocol}://${host}`;
-        
-        // Store appointment via API
+
         const response = await fetch(`${baseUrl}/api/appointments`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ date: appointmentDate, time: appointmentTime })
+          body: JSON.stringify({ date: appointmentDate, time: appointmentTime }),
         });
-        
+
         if (!response.ok) {
           console.warn('Failed to store appointment, but continuing...');
         }
       } catch (error) {
         console.error('Failed to store appointment:', error);
-        // Don't fail the request if appointment storage fails
       }
     }
 
@@ -142,4 +202,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
-
