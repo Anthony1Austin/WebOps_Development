@@ -87,7 +87,7 @@
 
 /* Brand logo (SVG mark + CSS wordmark, or PNG master) */
 .brandmark {
-    height: 44px;
+    height: 100px;
     width: auto;
     display: block;
     flex: 0 0 auto;
@@ -95,8 +95,8 @@
 
 .brandmark--img {
     width: auto;
-    max-width: min(72vw, 420px);
-    height: 44px;
+    max-width: min(85vw, 680px);
+    height: 100px;
     object-fit: contain;
     object-position: left center;
 }
@@ -389,11 +389,13 @@
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: var(--header-height);
+    /* Fixed header + breathing room so the headline never sits tight under the nav */
+    padding-top: calc(var(--header-height) + var(--spacing-3xl));
+    scroll-margin-top: var(--header-height);
 }
 
 .hero__background {
@@ -461,7 +463,7 @@
     color: var(--color-white);
     max-width: 900px;
     margin: 0 auto;
-    padding-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
 }
 
 .hero__title {
@@ -593,12 +595,12 @@
 }
 
 .footer__brand .brandmark {
-    height: 54px;
+    height: 124px;
 }
 
 .footer__brand .brandmark--img {
-    height: 54px;
-    max-width: 280px;
+    height: 124px;
+    max-width: 480px;
 }
 
 .footer__brand .brandword__main {
@@ -616,17 +618,21 @@
 
 @media (max-width: 968px) {
     .brandmark {
-        height: 40px;
+        height: 88px;
     }
 
     .brandmark--img {
-        height: 40px;
-        max-width: min(68vw, 320px);
+        height: 88px;
+        max-width: min(78vw, 460px);
+    }
+
+    .footer__brand .brandmark {
+        height: 96px;
     }
 
     .footer__brand .brandmark--img {
-        height: 40px;
-        max-width: 240px;
+        height: 96px;
+        max-width: 320px;
     }
 
     .brandword__main {
