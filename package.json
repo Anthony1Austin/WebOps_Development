@@ -11,7 +11,8 @@
     "playwright": "^1.49.1"
   },
   "scripts": {
-    "capture:template-previews": "node scripts/capture-template-previews.mjs"
+    "capture:template-previews": "node scripts/capture-template-previews.mjs",
+    "render:brandmark-profiles": "node scripts/render-brandmark-profiles.mjs"
   }
 }
 

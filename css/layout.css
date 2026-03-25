@@ -85,12 +85,20 @@
     color: var(--color-white);
 }
 
-/* Brand logo (SVG mark + CSS wordmark) */
+/* Brand logo (SVG mark + CSS wordmark, or PNG master) */
 .brandmark {
     height: 44px;
     width: auto;
     display: block;
     flex: 0 0 auto;
+}
+
+.brandmark--img {
+    width: auto;
+    max-width: min(72vw, 420px);
+    height: 44px;
+    object-fit: contain;
+    object-position: left center;
 }
 
 .brandword {
@@ -588,6 +596,11 @@
     height: 54px;
 }
 
+.footer__brand .brandmark--img {
+    height: 54px;
+    max-width: 280px;
+}
+
 .footer__brand .brandword__main {
     font-size: var(--font-size-2xl);
 }
@@ -604,6 +617,16 @@
 @media (max-width: 968px) {
     .brandmark {
         height: 40px;
+    }
+
+    .brandmark--img {
+        height: 40px;
+        max-width: min(68vw, 320px);
+    }
+
+    .footer__brand .brandmark--img {
+        height: 40px;
+        max-width: 240px;
     }
 
     .brandword__main {

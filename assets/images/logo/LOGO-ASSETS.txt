@@ -1,0 +1,37 @@
+WebOps Development LLC — logo folder
+=====================================
+
+Master marks (source)
+---------------------
+webops-logo-A-clean-black.png   — Full wordmark on black background (used on dark site header/footer).
+webops-logo-A-clean-white.png   — Full wordmark on white background (print, light UI).
+webops-logo-A-clean-transparent.png — RGBA; use for overlays and design tools.
+
+Text-only wordmark (generated)
+-------------------------------
+webops-wordmark-text-white.png  — Transparent PNG (no background shape). White text: “WebOps” (bold) + “ Development” (regular). Use on dark backgrounds only.
+webops-wordmark-text-black.png  — Transparent PNG. Near-black text (#111827). Use on light backgrounds only.
+webops-wordmark-llc-brand-colors.png — Transparent PNG, full legal name: “WebOps” (#2563eb) + “ Development” (#14b8a6) + “ LLC” (#f59e0b). Arial Bold / Regular; matches site brand colors.
+webops-wordmark-llc-brand-colors-black-bg.png — Same text/colors on solid black (#000), tight crop (good for headers, email).
+webops-wordmark-llc-brand-colors-black-bg-1080.png — Same on 1080×1080 black square (social / profile use).
+(Regenerate: python3 scripts/generate-webops-logo-assets.py)
+
+Website (generated from masters)
+---------------------------------
+favicon-32.png    — Browser tab icon (32×32).
+favicon-180.png   — Apple touch icon / home screen (180×180).
+
+Social media (generated)
+------------------------
+social-profile-black-bg-1080.png — 1080×1080 square, black background + logo (avatars, thumbnails).
+social-profile-white-bg-1080.png — 1080×1080 square, white background + logo.
+social-profile-brandmark-black-bg-1080.png — 1080×1080, black background + SVG brandmark (blue / teal / amber; same geometry as the legacy nav icon). Regenerate: npm run render:brandmark-profiles
+social-profile-brandmark-white-bg-1080.png — 1080×1080, white background + same brandmark.
+webops-brandmark.svg — Source SVG for the icon (matches legacy site mark).
+social-watermark-light-logo-1600x900.png — Wide transparent canvas with logo bottom-right; layer over photos in editors.
+
+LinkedIn / covers (existing)
+----------------------------
+linkedin-*.png — Cover images as previously exported.
+
+Regenerating favicons and social squares: run scripts/generate-webops-logo-assets.py from the repo root.

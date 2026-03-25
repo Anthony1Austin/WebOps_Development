@@ -891,6 +891,10 @@
     margin-top: var(--spacing-2xl);
 }
 
+.about .section__header .section__description + .section__description {
+    margin-top: var(--spacing-md);
+}
+
 /* Expertise Grid */
 .expertise__grid {
     display: grid;
