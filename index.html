@@ -56,12 +56,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/favicon-180.png">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/main.css" as="style">
+    <!-- Preload Critical Resources (query bumps cache when CSS changes; @import sub-files are easy to cache-stale) -->
+    <link rel="preload" href="css/main.css?v=20250333" as="style">
     <link rel="preload" href="js/main.js" as="script">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=20250333">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -199,10 +199,6 @@
                         From concept to launch, we deliver websites that make your business shine.
                     </p>
                     <div class="hero__stats">
-                        <div class="hero__stat">
-                            <div class="hero__stat-number" id="template-count">9</div>
-                            <div class="hero__stat-label">Website Portfolio</div>
-                        </div>
                         <div class="hero__stat">
                             <div class="hero__stat-number">100%</div>
                             <div class="hero__stat-label">SEO Optimized</div>

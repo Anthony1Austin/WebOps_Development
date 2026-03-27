@@ -5,7 +5,7 @@
 import { updateCopyrightYear } from './utils.js';
 import { initNavigation } from './navigation.js';
 import { initAnimations, initScrollToTop } from './animations.js';
-import { initTemplates, templates } from './templates.js';
+import { initTemplates } from './templates.js';
 import { initPortfolio } from './portfolio.js';
 import { getAvailableTimeSlots, formatTime } from './calendar.js';
 
@@ -95,9 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll to top
     initScrollToTop();
 
-    // Update template count dynamically
-    updateTemplateCount();
-
     // Initialize template showcase
     initTemplates();
 
@@ -162,14 +159,6 @@ function setLegalLinks() {
         termsLinks.forEach(link => {
             link.href = '/terms';
         });
-    }
-}
-
-// Update template count in hero section
-function updateTemplateCount() {
-    const templateCountElement = document.getElementById('template-count');
-    if (templateCountElement && templates) {
-        templateCountElement.textContent = templates.length;
     }
 }
 
