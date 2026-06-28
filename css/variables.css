@@ -1,46 +1,42 @@
-/* CSS Custom Properties - WebOps Development Brand Colors */
+/* CSS Custom Properties — WebOps Development */
 :root {
-    /* Colors - Primary (Professional Blue) */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1e40af;
-    --color-primary-light: #3b82f6;
-    
-    /* Colors - Secondary (Vibrant Teal) */
-    --color-secondary: #14b8a6;
-    --color-secondary-dark: #0d9488;
-    --color-secondary-light: #2dd4bf;
-    
-    /* Colors - Accent (Energetic Orange) */
-    --color-accent: #f59e0b;
-    --color-accent-dark: #d97706;
-    --color-accent-light: #fbbf24;
-    
-    /* Colors - Neutral */
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #6b7280;
-    --color-gray-600: #4b5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
+    /* Colors — warm, deliberate palette (not default blue/green SaaS) */
+    --color-primary: #C2410C;
+    --color-primary-dark: #9A3412;
+    --color-primary-light: #EA580C;
 
-    /* Same stack as body — hero letterboxing / edges match main site (single source of truth) */
+    --color-secondary: #44403C;
+    --color-secondary-dark: #292524;
+    --color-secondary-light: #78716C;
+
+    --color-accent: #7C3AED;
+    --color-accent-dark: #6D28D9;
+    --color-accent-light: #A78BFA;
+
+    --color-page: #F8F7F4;
+    --color-white: #ffffff;
+    --color-black: #0C0A09;
+    --color-gray-50: #FAFAF9;
+    --color-gray-100: #F5F5F4;
+    --color-gray-200: #E7E5E4;
+    --color-gray-300: #D6D3D1;
+    --color-gray-400: #A8A29E;
+    --color-gray-500: #78716C;
+    --color-gray-600: #57534E;
+    --color-gray-700: #44403C;
+    --color-gray-800: #292524;
+    --color-gray-900: #1C1917;
+
     --site-page-background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(37, 99, 235, 0.18), transparent 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(20, 184, 166, 0.18), transparent 60%),
-        radial-gradient(1000px 700px at 50% 95%, rgba(245, 158, 11, 0.16), transparent 65%),
-        radial-gradient(900px 650px at 50% 55%, rgba(59, 130, 246, 0.10), transparent 62%),
-        var(--color-white);
-    
+        radial-gradient(1100px 520px at 12% 8%, rgba(194, 65, 12, 0.07), transparent 58%),
+        radial-gradient(900px 480px at 88% 18%, rgba(124, 58, 237, 0.06), transparent 55%),
+        radial-gradient(800px 600px at 50% 100%, rgba(68, 64, 60, 0.04), transparent 60%),
+        var(--color-page);
+
     /* Typography */
-    --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-heading: 'Inter', 'SF Pro Display', var(--font-family-primary);
-    
+    --font-family-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-heading: 'Space Grotesk', var(--font-family-primary);
+
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -51,18 +47,21 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
-    
+    --font-size-7xl: 4.5rem;
+
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    
-    --line-height-tight: 1.25;
+
+    --line-height-tight: 1.15;
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.75;
-    
+
+    --letter-spacing-label: 0.12em;
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -73,33 +72,31 @@
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
     --spacing-5xl: 8rem;
-    
+
     /* Layout */
-    --container-max-width: 1400px;
+    --container-max-width: 1320px;
     --container-padding: var(--spacing-md);
-    
-    /* ~min for 100px logo; full 0.5in shave would need a smaller logo */
     --header-height: 100px;
-    
+
     /* Border */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
     --border-radius-lg: 1rem;
     --border-radius-xl: 1.5rem;
     --border-radius-full: 9999px;
-    
+
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
+    --shadow-sm: 0 1px 2px 0 rgba(12, 10, 9, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(12, 10, 9, 0.08), 0 2px 4px -1px rgba(12, 10, 9, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(12, 10, 9, 0.08), 0 4px 6px -2px rgba(12, 10, 9, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(12, 10, 9, 0.08), 0 10px 10px -5px rgba(12, 10, 9, 0.03);
+    --shadow-2xl: 0 25px 50px -12px rgba(12, 10, 9, 0.18);
+
     /* Transitions */
     --transition-fast: 150ms ease-in-out;
     --transition-base: 300ms ease-in-out;
     --transition-slow: 500ms ease-in-out;
-    
+
     /* Z-index */
     --z-dropdown: 1000;
     --z-sticky: 1020;
@@ -112,7 +109,6 @@
 
 @media (max-width: 968px) {
     :root {
-        /* Header logo is 88px in this breakpoint */
         --header-height: 92px;
     }
 }

@@ -7,6 +7,7 @@ import { initNavigation } from './navigation.js';
 import { initAnimations, initScrollToTop } from './animations.js';
 import { initTemplates } from './templates.js';
 import { initPortfolio } from './portfolio.js';
+import { initFaq } from './faq.js';
 import { getAvailableTimeSlots, formatTime } from './calendar.js';
 
 let turnstileWidgetId = null;
@@ -100,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize portfolio showcase
     initPortfolio();
+
+    // FAQ accordion
+    initFaq();
 
     // Update copyright year
     updateCopyrightYear();

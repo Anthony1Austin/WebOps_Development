@@ -21,7 +21,7 @@ export function initAnimations() {
     }, observerOptions);
 
     // Observe all sections and cards
-    const animatedElements = document.querySelectorAll('.section, .template-card, .service-card, .process__step');
+    const animatedElements = document.querySelectorAll('.section, .work-card, .approach__item, .process__step, .testimonial-card, .faq__item, .template-card');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
