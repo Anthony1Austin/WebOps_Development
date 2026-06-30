@@ -45,6 +45,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="WebOps Dev">
 
+    <style>
+        body.intro-active { overflow: hidden; }
+        body.intro-active .header { visibility: hidden; }
+    </style>
+
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo/favicon-32.png">
@@ -54,9 +59,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preload" href="css/main.css?v=20250628f" as="style">
+    <link rel="preload" href="css/main.css?v=20250630" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    <link rel="stylesheet" href="css/main.css?v=20250628f">
+    <link rel="stylesheet" href="css/main.css?v=20250630">
 
     <script type="application/ld+json">
     {
@@ -221,7 +226,20 @@
     }
     </script>
 </head>
-<body>
+<body class="intro-active">
+    <div class="intro-curtain" id="intro-curtain" aria-hidden="true">
+        <div class="intro-curtain__inner">
+            <img
+                class="intro-curtain__logo"
+                src="/assets/images/logo/webops-logo-A-clean-transparent.png"
+                alt="WebOps Development"
+                width="2200"
+                height="700"
+                decoding="async"
+            />
+        </div>
+    </div>
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="header" id="header" role="banner">

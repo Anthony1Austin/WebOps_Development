@@ -2,6 +2,7 @@
  * Main Initialization
  */
 
+import { initIntro } from './intro.js';
 import { updateCopyrightYear } from './utils.js';
 import { initNavigation } from './navigation.js';
 import { initAnimations, initScrollToTop } from './animations.js';
@@ -81,6 +82,9 @@ async function setupContactFormTurnstile(form) {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Homepage intro curtain (no-op on other pages)
+    initIntro();
+
     // Set logo link based on environment
     setLogoLink();
     

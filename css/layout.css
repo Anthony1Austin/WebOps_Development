@@ -1042,3 +1042,178 @@
         font-size: var(--font-size-xs);
     }
 }
+
+/* Homepage intro curtain */
+.intro-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.intro-curtain.is-exiting {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-curtain__inner {
+    text-align: center;
+    padding: var(--spacing-xl);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-curtain__logo {
+    width: min(88vw, 520px);
+    height: auto;
+    max-height: 40vh;
+    object-fit: contain;
+    opacity: 0;
+    transform: translateY(28px) rotate(-3deg) scale(0.9);
+    transform-origin: center center;
+    animation: introLogoSettle 1.05s cubic-bezier(0.34, 1.3, 0.64, 1) 0.1s forwards;
+}
+
+@keyframes introLogoSettle {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) rotate(-4deg) scale(0.88);
+    }
+    58% {
+        opacity: 1;
+        transform: translateY(-6px) rotate(1.5deg) scale(1.03);
+    }
+    82% {
+        transform: translateY(2px) rotate(-0.5deg) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+body.intro-complete .header {
+    visibility: visible;
+    animation: headerFadeIn 0.6s ease 0.1s both;
+}
+
+@keyframes headerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero headline reveal (after intro) */
+.hero:not(.is-revealed) .hero__title-line,
+.hero:not(.is-revealed) .hero__description,
+.hero:not(.is-revealed) .hero__stats,
+.hero:not(.is-revealed) .hero__buttons,
+.hero:not(.is-revealed) .hero__visual {
+    opacity: 0;
+}
+
+.hero__title-line {
+    transform-origin: left center;
+}
+
+.hero.is-revealed .hero__title-line:nth-child(1) {
+    animation: heroLineTiltSettle 1.15s cubic-bezier(0.34, 1.35, 0.64, 1) 0.1s both;
+}
+
+.hero.is-revealed .hero__title-line:nth-child(2) {
+    animation: heroLineSnapSkew 1.2s cubic-bezier(0.22, 1.2, 0.36, 1) 0.88s both;
+}
+
+.hero.is-revealed .hero__description {
+    animation: heroFloatIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 1.35s both;
+}
+
+.hero.is-revealed .hero__stats {
+    animation: heroFloatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.55s both;
+}
+
+.hero.is-revealed .hero__buttons {
+    animation: heroFloatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.7s both;
+}
+
+.hero.is-revealed .hero__visual {
+    animation: heroFloatIn 1s cubic-bezier(0.22, 1, 0.36, 1) 1.45s both;
+}
+
+/* Line 1: drifts in crooked, wobbles, settles straight */
+@keyframes heroLineTiltSettle {
+    0% {
+        opacity: 0;
+        transform: translateY(2.75rem) translateX(-1.25rem) rotate(-6deg) skewX(-4deg);
+    }
+    45% {
+        opacity: 1;
+        transform: translateY(-8px) translateX(10px) rotate(3deg) skewX(2deg);
+    }
+    72% {
+        transform: translateY(4px) translateX(-4px) rotate(-1.5deg) skewX(-0.5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0deg) skewX(0deg);
+    }
+}
+
+/* Line 2: slides in from the opposite angle — more playful, more delay */
+@keyframes heroLineSnapSkew {
+    0% {
+        opacity: 0;
+        transform: translateY(2.25rem) translateX(2.5rem) rotate(7deg) skewY(3deg) scale(0.9);
+    }
+    42% {
+        opacity: 1;
+        transform: translateY(-10px) translateX(-12px) rotate(-3deg) skewY(-1.5deg) scale(1.03);
+    }
+    68% {
+        transform: translateY(5px) translateX(4px) rotate(1.2deg) skewY(0.5deg) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0deg) skewY(0deg) scale(1);
+    }
+}
+
+@keyframes heroFloatIn {
+    from {
+        opacity: 0;
+        transform: translateY(1.75rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-curtain {
+        display: none !important;
+    }
+
+    body.intro-active {
+        overflow: auto;
+    }
+
+    body.intro-active .header {
+        visibility: visible;
+    }
+
+    .hero .hero__title-line,
+    .hero .hero__description,
+    .hero .hero__stats,
+    .hero .hero__buttons,
+    .hero .hero__visual {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
