@@ -48,6 +48,14 @@
     <style>
         body.intro-active { overflow: hidden; }
         body.intro-active .header { visibility: hidden; }
+        body.intro-scroll-lock {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            overflow: hidden;
+        }
     </style>
 
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -59,9 +67,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preload" href="css/main.css?v=20250630" as="style">
+    <link rel="preload" href="css/main.css?v=20250630i" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    <link rel="stylesheet" href="css/main.css?v=20250630">
+    <link rel="stylesheet" href="css/main.css?v=20250630i">
 
     <script type="application/ld+json">
     {
@@ -274,6 +282,13 @@
     </header>
 
     <main id="main-content" role="main">
+        <svg class="svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="hero-bottom-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,0 H1 V0.955 C0.84,0.985 0.70,0.925 0.56,0.955 C0.42,0.985 0.28,0.925 0,0.955 Z"/>
+                </clipPath>
+            </defs>
+        </svg>
         <section class="hero" id="home">
             <div class="hero__background" aria-hidden="true">
                 <div class="hero__gradient"></div>

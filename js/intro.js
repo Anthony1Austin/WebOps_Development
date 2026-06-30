@@ -8,16 +8,40 @@ function prefersReducedMotion() {
     return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
 }
 
+function scrollToTop() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+}
+
+function lockScrollAtTop() {
+    scrollToTop();
+    document.body.classList.add('intro-scroll-lock');
+}
+
+function unlockScrollAtTop() {
+    document.body.classList.remove('intro-scroll-lock');
+    scrollToTop();
+    requestAnimationFrame(() => {
+        scrollToTop();
+    });
+}
+
 function revealHero(hero) {
     if (!hero) return;
     hero.classList.add('is-revealed');
 }
 
-function skipIntro(curtain, hero) {
-    curtain?.remove();
+function finishIntro(curtain, hero) {
+    unlockScrollAtTop();
     document.body.classList.remove('intro-active');
     document.body.classList.add('intro-complete');
     revealHero(hero);
+}
+
+function skipIntro(curtain, hero) {
+    curtain?.remove();
+    finishIntro(curtain, hero);
 }
 
 export function initIntro() {
@@ -25,6 +49,13 @@ export function initIntro() {
     const hero = document.querySelector('.hero');
 
     if (!curtain) return;
+
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    scrollToTop();
+    lockScrollAtTop();
 
     if (prefersReducedMotion() || sessionStorage.getItem(INTRO_SESSION_KEY)) {
         skipIntro(curtain, hero);
@@ -38,12 +69,11 @@ export function initIntro() {
 
     window.setTimeout(() => {
         curtain.classList.add('is-exiting');
-        document.body.classList.remove('intro-active');
-        document.body.classList.add('intro-complete');
-        revealHero(hero);
+        finishIntro(curtain, hero);
 
         window.setTimeout(() => {
             curtain.remove();
+            scrollToTop();
         }, INTRO_EXIT_MS);
     }, INTRO_HOLD_MS);
 }

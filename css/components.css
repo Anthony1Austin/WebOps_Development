@@ -340,10 +340,6 @@
     background-color: transparent;
 }
 
-.approach {
-    background: transparent;
-}
-
 .approach__grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -901,7 +897,7 @@
 
 /* CTA Section */
 .cta {
-    background: var(--color-gray-900);
+    background: linear-gradient(120deg, var(--color-logo-blue) 0%, var(--color-logo-teal) 100%);
     color: var(--color-white);
     text-align: left;
 }
@@ -934,13 +930,13 @@
 }
 
 .cta .btn--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-logo-amber);
+    color: var(--color-black);
 }
 
 .cta .btn--primary:hover {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
+    background-color: #D97706;
+    color: var(--color-black);
 }
 
 .cta .btn--secondary {
