@@ -1,26 +1,25 @@
 /**
- * Template Showcase - Dynamically generate template cards
+ * Website portfolio showcase — client work and starter demos
  */
 
 export const templates = [
     {
-        name: "Special Event Designs",
-        description: "Modern event planning and floral design website featuring interactive calendar booking, portfolio galleries, service showcases, and client testimonials. Perfect for event planners, florists, and wedding coordinators.",
-        features: ["Calendar Booking", "Portfolio Gallery", "Service Showcase"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Built with modern web standards - ready for production deployment",
+        name: "ClubExtreme Volleyball",
+        kind: "client",
+        meta: "Sports club · Ohio",
+        tagline: "Athlete profiles, event calendar, and registration for a competitive volleyball club.",
+        features: ["Event calendar", "Athlete profiles", "Registration"],
         color: "#dc2626",
-        path: "WebOps Development LLC Website/templates/special-event-designs/",
-        badge: "Events",
-        image: "assets/images/templates/special-event-designs-preview.jpg",
-        demoUrl: "https://special-event-designs-cnnf.vercel.app/"
+        badge: "Sports",
+        image: "assets/images/templates/clubextreme-volleyball.jpg",
+        liveUrl: "https://www.cevohio.org/"
     },
     {
         name: "Neptune Pressure Washing",
-        description: "Professional pressure washing service website with interactive house visualization, service bubbles, before/after gallery, trust badges, and comprehensive service listings. Perfect for exterior cleaning businesses, power washing services, and property maintenance companies.",
-        features: ["Interactive House", "Service Bubbles", "Before/After Gallery"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Built with modern web standards - ready for production deployment",
+        kind: "client",
+        meta: "Service business · Green, OH",
+        tagline: "Interactive house visualization, before/after gallery, and lead capture for a local exterior cleaning company.",
+        features: ["Interactive house", "Before/after gallery", "Lead capture"],
         color: "#1e3a5f",
         path: "WebOps Development LLC Website/templates/neptune-pressure-washing/",
         badge: "Service",
@@ -29,92 +28,92 @@ export const templates = [
     },
     {
         name: "The Group Sales Network",
-        description: "Hotel group sales task force website: on-demand coverage for on-property and above-property teams, service breakdowns, and clear CTAs for hospitality sales leaders.",
-        features: ["Service Pages", "On-Property / Portfolio Story", "Lead CTAs"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Built with modern web standards - ready for production deployment",
+        kind: "client",
+        meta: "Hospitality · Group sales",
+        tagline: "On-demand task force site for hotel group sales teams — coverage story, services, and lead CTAs.",
+        features: ["Service pages", "Portfolio story", "Lead CTAs"],
         color: "#0f766e",
         badge: "Hospitality",
         image: "assets/images/templates/the-group-sales-network-preview.jpg",
         demoUrl: "https://the-group-sales-network.vercel.app/"
     },
     {
-        name: "Blog Website",
-        description: "Perfect for content creators, writers, and businesses sharing regular updates. Features article layouts, categories, and search functionality.",
-        features: ["SEO Optimized", "Responsive", "Category System"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Easily migratable to Next.js, React, Vue, or any framework",
-        color: "#0d9488",
-        path: "WebOps Development LLC Website/templates/blog-website/",
-        badge: "Content",
-        image: "assets/images/templates/blog-website-featured.jpg"
+        name: "Special Event Designs",
+        kind: "client",
+        meta: "Events · Floral design",
+        tagline: "Event planning and floral design with calendar booking, portfolio galleries, and testimonials.",
+        features: ["Calendar booking", "Portfolio gallery", "Service showcase"],
+        color: "#dc2626",
+        path: "WebOps Development LLC Website/templates/special-event-designs/",
+        badge: "Events",
+        image: "assets/images/templates/special-event-designs-preview.jpg",
+        demoUrl: "https://special-event-designs-cnnf.vercel.app/"
     },
     {
         name: "Business Websites",
-        description: "Corporate demo (Northline Advisory) with playful hero motion, problem/solution cards, case studies, team profiles, FAQ, and conversion features — built for B2B and professional services.",
-        features: ["Case Studies", "Team Profiles", "Lead Capture"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Framework-agnostic — works with any backend or framework",
+        kind: "demo",
+        meta: "Corporate · B2B",
+        tagline: "Consulting demo with case studies, team profiles, FAQ, and conversion-focused sections.",
+        features: ["Case studies", "Team profiles", "Lead capture"],
         color: "#2563EB",
         path: "WebOps Development LLC Website/templates/business-websites/",
         badge: "Corporate",
         image: "assets/images/templates/business-websites-hero.jpg"
     },
     {
-        name: "Dealership Website",
-        description: "Polished automotive demo (Summit Auto Group) with inventory search hero, vehicle grid, financing calculator, service department, and trust sections — built for dealers and lots.",
-        features: ["Inventory Search", "Financing Calculator", "Service Dept"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Ready for React, Vue, or framework integration",
-        color: "#1D4ED8",
-        path: "WebOps Development LLC Website/templates/dealership-website/",
-        badge: "Automotive",
-        image: "assets/images/templates/dealership-website-hero.jpg"
-    },
-    {
-        name: "E-commerce Website",
-        description: "Polished online store demo (Vantage Market) with photo hero, product grid, deals, categories, cart preview, and trust sections — built for DTC brands and boutiques.",
-        features: ["Product Grid", "Cart Preview", "Deals & Categories"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Easily enhanced with Next.js, Vue.js, Ruby on Rails, or any e-commerce backend",
-        color: "#7C3AED",
-        path: "WebOps Development LLC Website/templates/e-commerce-website/",
-        badge: "Retail",
-        image: "assets/images/templates/e-commerce-website-preview.jpg"
-    },
-    {
         name: "Service-Oriented Website",
-        description: "Modern service-business demo (Polished & Co.) with playful hero motion, booking flow, service cards, gallery, offers, and trust sections — built for salons, studios, and local pros.",
-        features: ["Playful Hero", "Booking Flow", "Service Cards"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Framework-agnostic foundation",
+        kind: "demo",
+        meta: "Local services · Salon",
+        tagline: "Booking flow, service cards, gallery, and offers for salons, studios, and local pros.",
+        features: ["Booking flow", "Service cards", "Gallery"],
         color: "#E11D48",
         path: "WebOps Development LLC Website/templates/service-oriented-website/",
         badge: "Service",
         image: "assets/images/templates/service-oriented-website-preview.jpg"
     },
     {
+        name: "E-commerce Website",
+        kind: "demo",
+        meta: "Retail · DTC",
+        tagline: "Product grid, deals, categories, and cart preview for online stores and boutiques.",
+        features: ["Product grid", "Cart preview", "Deals"],
+        color: "#7C3AED",
+        path: "WebOps Development LLC Website/templates/e-commerce-website/",
+        badge: "Retail",
+        image: "assets/images/templates/e-commerce-website-preview.jpg"
+    },
+    {
+        name: "Dealership Website",
+        kind: "demo",
+        meta: "Automotive · Dealer",
+        tagline: "Inventory search, financing calculator, and service department for auto dealerships.",
+        features: ["Inventory search", "Financing", "Service dept"],
+        color: "#1D4ED8",
+        path: "WebOps Development LLC Website/templates/dealership-website/",
+        badge: "Automotive",
+        image: "assets/images/templates/dealership-website-hero.jpg"
+    },
+    {
+        name: "Blog Website",
+        kind: "demo",
+        meta: "Content · Publishing",
+        tagline: "Article layouts, categories, and search for writers, creators, and content teams.",
+        features: ["SEO optimized", "Categories", "Article layouts"],
+        color: "#0d9488",
+        path: "WebOps Development LLC Website/templates/blog-website/",
+        badge: "Content",
+        image: "assets/images/templates/blog-website-featured.jpg"
+    },
+    {
         name: "Property Management",
-        description: "Professional property management platform for vacation homes, apartments, and rental properties. Features property listings, tenant portals, maintenance requests, and booking systems.",
-        features: ["Property Listings", "Tenant Portal", "Maintenance System"],
-        techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Ready for React, Vue, or any property management backend",
+        kind: "demo",
+        meta: "Real estate · Rentals",
+        tagline: "Property listings, tenant portal, and maintenance requests for rental managers.",
+        features: ["Listings", "Tenant portal", "Maintenance"],
         color: "#1e3a8a",
         path: "WebOps Development LLC Website/templates/property-management/",
         badge: "Real Estate",
         image: "assets/images/templates/property-management-preview.jpg"
-    },
-    {
-        name: "ClubExtreme Volleyball",
-        description: "Professional volleyball club website featuring athlete profiles, event calendar, team information, and registration system.",
-        features: ["Event Calendar", "Athlete Profiles", "Registration System"],
-        techStack: "Custom front-end with modern web standards",
-        frameworkReady: "Production-ready live website deployment",
-        color: "#dc2626",
-        badge: "Sports",
-        image: "assets/images/templates/clubextreme-volleyball.jpg",
-        liveUrl: "https://www.cevohio.org/",
-        demoUrl: ""
     }
 ];
 
@@ -133,172 +132,81 @@ export function withTemplatePreviewCacheBust(url) {
 
 /**
  * Pick the best URL to link to for a template card.
- * Best practice ordering:
- * 1) liveUrl (real published website, including non-Vercel)
- * 2) demoUrl (stable Vercel alias/redirect while building)
- * 3) path (local template source fallback)
  */
 export function getTemplatePrimaryUrl(template) {
     if (!template) return '';
     return template.liveUrl || template.demoUrl || template.path || '';
 }
 
-export function initTemplates() {
-    const templatesGrid = document.getElementById('templates-grid');
-    if (!templatesGrid) return;
-
-    templates.forEach((template, index) => {
-        const card = createTemplateCard(template, index);
-        templatesGrid.appendChild(card);
-    });
-
-    // Hover-based reveals don't work well on touch devices (mobile).
-    const isTouch = window.matchMedia?.('(hover: none), (pointer: coarse)')?.matches;
-    if (!isTouch) {
-        initTemplatesReveal();
-    }
+function getTemplateLinkLabel(template) {
+    if (template.liveUrl || template.demoUrl) return 'View live site';
+    return 'Preview demo';
 }
 
-function createTemplateCard(template, index) {
-    const card = document.createElement('article');
-    card.className = 'template-card fade-in';
-    card.style.animationDelay = `${index * 0.1}s`;
-    
-    // Use custom image if provided, otherwise generate from template name
+export function initTemplates() {
+    const templatesList = document.getElementById('templates-grid');
+    if (!templatesList) return;
+
+    templates.forEach((template, index) => {
+        templatesList.appendChild(createShowcaseItem(template, index));
+    });
+
+    initShowcaseFilters();
+}
+
+function createShowcaseItem(template, index) {
+    const item = document.createElement('article');
+    item.className = 'showcase-item';
+    item.dataset.kind = template.kind || 'demo';
+
     const imageUrl = withTemplatePreviewCacheBust(
         template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`
     );
     const primaryUrl = getTemplatePrimaryUrl(template);
     const primaryHref = primaryUrl ? encodeURI(primaryUrl) : '#';
-    
-    card.innerHTML = `
-        <div class="template-card__image" style="background-color: transparent;">
-            <img src="${imageUrl}" alt="${template.name} preview" loading="lazy">
-            <span class="template-card__badge" style="background-color: ${template.color}">${template.badge}</span>
-        </div>
-        <div class="template-card__content">
-            <h3 class="template-card__title">${template.name}</h3>
-            <div class="template-card__reveal">
-                <p class="template-card__description">${template.description}</p>
-                <div class="template-card__features">
-                    ${template.features.map(feature => 
-                        `<span class="template-card__feature">${feature}</span>`
-                    ).join('')}
-                </div>
-                <div class="template-card__tech">
-                    <div class="template-card__tech-stack">
-                        <strong>Tech Stack:</strong> ${template.techStack}
-                    </div>
-                    <div class="template-card__framework-ready">
-                        <strong>Framework Ready:</strong> ${template.frameworkReady}
-                    </div>
-                </div>
-                <div class="template-card__actions">
-                    <a href="${primaryHref}" class="template-card__link" target="_blank" rel="noopener noreferrer" style="background-color: ${template.color}">
-                        View Website
-                    </a>
-                </div>
-            </div>
+    const linkLabel = getTemplateLinkLabel(template);
+    const tagline = template.tagline || template.description || '';
+    const kindLabel = template.kind === 'client' ? 'Live site' : 'Starter demo';
+    const metaLine = template.meta ? `${kindLabel} · ${template.meta}` : kindLabel;
+
+    item.innerHTML = `
+        <a href="${primaryHref}" class="showcase-item__thumb" target="_blank" rel="noopener noreferrer" aria-label="${template.name} — ${linkLabel}">
+            <img src="${imageUrl}" alt="" loading="lazy" width="400" height="250">
+        </a>
+        <div class="showcase-item__content">
+            <p class="showcase-item__meta">${metaLine}</p>
+            <h3 class="showcase-item__title">
+                <a href="${primaryHref}" target="_blank" rel="noopener noreferrer">${template.name}</a>
+            </h3>
+            <p class="showcase-item__text">${tagline}</p>
+            <a href="${primaryHref}" class="showcase-item__link" target="_blank" rel="noopener noreferrer">${linkLabel} →</a>
         </div>
     `;
 
-    // Add hover effect
-    card.addEventListener('mouseenter', () => {
-        card.style.borderColor = template.color;
-    });
-
-    return card;
+    return item;
 }
 
-/**
- * GSAP roll-up reveal on hover - Our Templates section only.
- * Only the hovered card is expanded; all others stay collapsed.
- */
-export function initTemplatesReveal() {
-    const grid = document.getElementById('templates-grid');
-    if (!grid || typeof window.gsap === 'undefined') return;
+function initShowcaseFilters() {
+    const filterBar = document.getElementById('showcase-filters');
+    const list = document.getElementById('templates-grid');
+    if (!filterBar || !list) return;
 
-    const cards = grid.querySelectorAll('.template-card');
-    /** @type {HTMLElement | null} - The one reveal that is currently open (only one at a time). */
-    let activeReveal = null;
+    const buttons = filterBar.querySelectorAll('[data-filter]');
+    const items = list.querySelectorAll('.showcase-item');
 
-    function forceCloseReveal(reveal) {
-        if (!reveal) return;
-        const children = reveal.querySelectorAll('.template-card__description, .template-card__features, .template-card__tech, .template-card__actions');
-        window.gsap.killTweensOf(reveal);
-        window.gsap.killTweensOf(children);
-        window.gsap.set(reveal, { height: 0, opacity: 0, overflow: 'hidden' });
-        window.gsap.set(children, { opacity: 0, y: 10 });
-    }
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
 
-    cards.forEach((card) => {
-        const reveal = card.querySelector('.template-card__reveal');
-        if (!reveal) return;
-
-        const children = reveal.querySelectorAll('.template-card__description, .template-card__features, .template-card__tech, .template-card__actions');
-        let openTween = null;
-        let closeTween = null;
-        let staggerTween = null;
-
-        function closeThisReveal() {
-            if (activeReveal === reveal) activeReveal = null;
-            if (openTween) openTween.kill();
-            openTween = null;
-            if (staggerTween) staggerTween.kill();
-            staggerTween = null;
-            if (closeTween) closeTween.kill();
-            closeTween = window.gsap.to(reveal, {
-                height: 0,
-                opacity: 0,
-                duration: 0.25,
-                ease: 'power2.in',
-                overflow: 'hidden',
-                onComplete: () => {
-                    closeTween = null;
-                }
+            buttons.forEach((btn) => {
+                btn.classList.toggle('is-active', btn === button);
+                btn.setAttribute('aria-selected', btn === button ? 'true' : 'false');
             });
-            window.gsap.set(children, { opacity: 0, y: 10 });
-        }
 
-        function openThisReveal() {
-            if (closeTween) closeTween.kill();
-            closeTween = null;
-            openTween = window.gsap.to(reveal, {
-                height: 'auto',
-                opacity: 1,
-                duration: 0.35,
-                ease: 'power2.out',
-                overflow: 'visible',
-                onComplete: () => {
-                    openTween = null;
-                }
+            items.forEach((item) => {
+                const match = filter === 'all' || item.dataset.kind === filter;
+                item.hidden = !match;
             });
-            staggerTween = window.gsap.fromTo(children, { opacity: 0, y: 10 }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.25,
-                stagger: 0.04,
-                delay: 0.06,
-                ease: 'power2.out'
-            });
-        }
-
-        card.addEventListener('mouseenter', () => {
-            if (activeReveal === reveal) return;
-            forceCloseReveal(activeReveal);
-            activeReveal = reveal;
-            openThisReveal();
         });
-
-        card.addEventListener('mouseleave', () => {
-            closeThisReveal();
-        });
-    });
-
-    // Start with all reveals collapsed
-    cards.forEach((card) => {
-        const reveal = card.querySelector('.template-card__reveal');
-        if (reveal) forceCloseReveal(reveal);
     });
 }
-
