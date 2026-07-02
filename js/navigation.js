@@ -3,7 +3,7 @@
  */
 
 import { scrollToElement } from './utils.js';
-import { getTemplatePrimaryUrl, templates, withTemplatePreviewCacheBust } from './templates.js';
+import { getTemplatePrimaryUrl, getTemplateLinkLabel, templates, withTemplatePreviewCacheBust } from './templates.js';
 
 export function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
@@ -269,7 +269,7 @@ function initTemplatesDropdown() {
                 <img src="${imageUrl}" alt="${template.name} preview" loading="lazy">
             </div>
             <a href="${encodeURI(getTemplatePrimaryUrl(template))}" class="nav__dropdown-template-link" target="_blank" rel="noopener noreferrer">
-                View Website
+                ${getTemplateLinkLabel(template)}
             </a>
         `;
         

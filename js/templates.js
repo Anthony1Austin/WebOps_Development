@@ -1,11 +1,17 @@
 /**
  * Website portfolio showcase — client work and starter demos
+ *
+ * status:
+ * - live: on the client's production domain
+ * - in-progress: real client work on a staging/preview URL (e.g. Vercel) until launch
+ * - demo: WebOps starter template, not tied to a client launch
  */
 
 export const templates = [
     {
         name: "ClubExtreme Volleyball",
         kind: "client",
+        status: "live",
         meta: "Sports club · Ohio",
         tagline: "Athlete profiles, event calendar, and registration for a competitive volleyball club.",
         features: ["Event calendar", "Athlete profiles", "Registration"],
@@ -17,6 +23,7 @@ export const templates = [
     {
         name: "Neptune Pressure Washing",
         kind: "client",
+        status: "live",
         meta: "Service business · Green, OH",
         tagline: "Interactive house visualization, before/after gallery, and lead capture for a local exterior cleaning company.",
         features: ["Interactive house", "Before/after gallery", "Lead capture"],
@@ -24,34 +31,37 @@ export const templates = [
         path: "WebOps Development LLC Website/templates/neptune-pressure-washing/",
         badge: "Service",
         image: "assets/images/templates/neptune-pressure-washing-preview.jpg",
-        demoUrl: "https://www.neptunewashpros.com/"
+        liveUrl: "https://www.neptunewashpros.com/"
     },
     {
         name: "The Group Sales Network",
         kind: "client",
+        status: "in-progress",
         meta: "Hospitality · Group sales",
-        tagline: "On-demand task force site for hotel group sales teams — coverage story, services, and lead CTAs.",
+        tagline: "On-demand task force site for hotel group sales teams — in active development ahead of client launch.",
         features: ["Service pages", "Portfolio story", "Lead CTAs"],
         color: "#0f766e",
         badge: "Hospitality",
         image: "assets/images/templates/the-group-sales-network-preview.jpg",
-        demoUrl: "https://the-group-sales-network.vercel.app/"
+        previewUrl: "https://the-group-sales-network.vercel.app/"
     },
     {
         name: "Special Event Designs",
         kind: "client",
+        status: "in-progress",
         meta: "Events · Floral design",
-        tagline: "Event planning and floral design with calendar booking, portfolio galleries, and testimonials.",
+        tagline: "Event planning and floral design with calendar booking, galleries, and testimonials — staging preview until launch.",
         features: ["Calendar booking", "Portfolio gallery", "Service showcase"],
         color: "#dc2626",
         path: "WebOps Development LLC Website/templates/special-event-designs/",
         badge: "Events",
         image: "assets/images/templates/special-event-designs-preview.jpg",
-        demoUrl: "https://special-event-designs-cnnf.vercel.app/"
+        previewUrl: "https://special-event-designs-cnnf.vercel.app/"
     },
     {
         name: "Business Websites",
         kind: "demo",
+        status: "demo",
         meta: "Corporate · B2B",
         tagline: "Consulting demo with case studies, team profiles, FAQ, and conversion-focused sections.",
         features: ["Case studies", "Team profiles", "Lead capture"],
@@ -63,6 +73,7 @@ export const templates = [
     {
         name: "Service-Oriented Website",
         kind: "demo",
+        status: "demo",
         meta: "Local services · Salon",
         tagline: "Booking flow, service cards, gallery, and offers for salons, studios, and local pros.",
         features: ["Booking flow", "Service cards", "Gallery"],
@@ -74,6 +85,7 @@ export const templates = [
     {
         name: "E-commerce Website",
         kind: "demo",
+        status: "demo",
         meta: "Retail · DTC",
         tagline: "Product grid, deals, categories, and cart preview for online stores and boutiques.",
         features: ["Product grid", "Cart preview", "Deals"],
@@ -85,6 +97,7 @@ export const templates = [
     {
         name: "Dealership Website",
         kind: "demo",
+        status: "demo",
         meta: "Automotive · Dealer",
         tagline: "Inventory search, financing calculator, and service department for auto dealerships.",
         features: ["Inventory search", "Financing", "Service dept"],
@@ -96,6 +109,7 @@ export const templates = [
     {
         name: "Blog Website",
         kind: "demo",
+        status: "demo",
         meta: "Content · Publishing",
         tagline: "Article layouts, categories, and search for writers, creators, and content teams.",
         features: ["SEO optimized", "Categories", "Article layouts"],
@@ -107,6 +121,7 @@ export const templates = [
     {
         name: "Property Management",
         kind: "demo",
+        status: "demo",
         meta: "Real estate · Rentals",
         tagline: "Property listings, tenant portal, and maintenance requests for rental managers.",
         features: ["Listings", "Tenant portal", "Maintenance"],
@@ -130,44 +145,68 @@ export function withTemplatePreviewCacheBust(url) {
     return `${url}${sep}v=${TEMPLATE_PREVIEW_ASSET_VERSION}`;
 }
 
+/** @param {typeof templates[number]} template */
+export function getTemplateStatus(template) {
+    if (!template) return 'demo';
+    if (template.status) return template.status;
+    if (template.kind === 'demo') return 'demo';
+    if (template.liveUrl) return 'live';
+    return 'in-progress';
+}
+
 /**
- * Pick the best URL to link to for a template card.
+ * Pick the best URL to link to for a portfolio item.
+ * @param {typeof templates[number]} template
  */
 export function getTemplatePrimaryUrl(template) {
     if (!template) return '';
-    return template.liveUrl || template.demoUrl || template.path || '';
+    return template.liveUrl || template.previewUrl || template.demoUrl || template.path || '';
 }
 
-function getTemplateLinkLabel(template) {
-    if (template.liveUrl || template.demoUrl) return 'View live site';
+/** @param {typeof templates[number]} template */
+export function getTemplateLinkLabel(template) {
+    const status = getTemplateStatus(template);
+    if (status === 'live') return 'View live site';
+    if (status === 'in-progress') return 'Preview staging site';
     return 'Preview demo';
+}
+
+/** @param {typeof templates[number]} template */
+export function getTemplateMetaLine(template) {
+    const statusLabels = {
+        live: 'Live site',
+        'in-progress': 'In progress',
+        demo: 'Starter demo'
+    };
+    const kindLabel = statusLabels[getTemplateStatus(template)] || 'Starter demo';
+    return template.meta ? `${kindLabel} · ${template.meta}` : kindLabel;
 }
 
 export function initTemplates() {
     const templatesList = document.getElementById('templates-grid');
     if (!templatesList) return;
 
-    templates.forEach((template, index) => {
-        templatesList.appendChild(createShowcaseItem(template, index));
+    templates.forEach((template) => {
+        templatesList.appendChild(createShowcaseItem(template));
     });
 
     initShowcaseFilters();
 }
 
-function createShowcaseItem(template, index) {
+/** @param {typeof templates[number]} template */
+function createShowcaseItem(template) {
     const item = document.createElement('article');
     item.className = 'showcase-item';
     item.dataset.kind = template.kind || 'demo';
+    item.dataset.status = getTemplateStatus(template);
 
     const imageUrl = withTemplatePreviewCacheBust(
         template.image || `assets/images/templates/${template.name.toLowerCase().replace(/\s+/g, '-')}.jpg`
     );
-    const primaryUrl = getTemplatePrimaryUrl(template);
-    const primaryHref = primaryUrl ? encodeURI(primaryUrl) : '#';
+    const primaryHref = encodeURI(getTemplatePrimaryUrl(template) || '#');
     const linkLabel = getTemplateLinkLabel(template);
     const tagline = template.tagline || template.description || '';
-    const kindLabel = template.kind === 'client' ? 'Live site' : 'Starter demo';
-    const metaLine = template.meta ? `${kindLabel} · ${template.meta}` : kindLabel;
+    const metaLine = getTemplateMetaLine(template);
 
     item.innerHTML = `
         <a href="${primaryHref}" class="showcase-item__thumb" target="_blank" rel="noopener noreferrer" aria-label="${template.name} — ${linkLabel}">
