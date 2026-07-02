@@ -51,44 +51,44 @@ export const templates = [
     },
     {
         name: "Business Websites",
-        description: "Professional corporate websites with team sections, testimonials, case studies, and comprehensive service showcases.",
-        features: ["Team Profiles", "Testimonials", "Case Studies"],
+        description: "Corporate demo (Northline Advisory) with playful hero motion, problem/solution cards, case studies, team profiles, FAQ, and conversion features — built for B2B and professional services.",
+        features: ["Case Studies", "Team Profiles", "Lead Capture"],
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
-        frameworkReady: "Framework-agnostic - works with any backend or framework",
-        color: "#1e3a8a",
+        frameworkReady: "Framework-agnostic — works with any backend or framework",
+        color: "#2563EB",
         path: "WebOps Development LLC Website/templates/business-websites/",
         badge: "Corporate",
         image: "assets/images/templates/business-websites-hero.jpg"
     },
     {
         name: "Dealership Website",
-        description: "Specialized for vehicle dealerships with inventory management, vehicle search filters, financing calculator, and service department.",
-        features: ["Inventory Grid", "Financing", "Service Dept"],
+        description: "Polished automotive demo (Summit Auto Group) with inventory search hero, vehicle grid, financing calculator, service department, and trust sections — built for dealers and lots.",
+        features: ["Inventory Search", "Financing Calculator", "Service Dept"],
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Ready for React, Vue, or framework integration",
-        color: "#2563eb",
+        color: "#1D4ED8",
         path: "WebOps Development LLC Website/templates/dealership-website/",
         badge: "Automotive",
         image: "assets/images/templates/dealership-website-hero.jpg"
     },
     {
         name: "E-commerce Website",
-        description: "Complete online store solution with product catalog, shopping cart, checkout process, and payment integration ready.",
-        features: ["Product Catalog", "Shopping Cart", "Checkout"],
+        description: "Polished online store demo (Vantage Market) with photo hero, product grid, deals, categories, cart preview, and trust sections — built for DTC brands and boutiques.",
+        features: ["Product Grid", "Cart Preview", "Deals & Categories"],
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Easily enhanced with Next.js, Vue.js, Ruby on Rails, or any e-commerce backend",
-        color: "#9333ea",
+        color: "#7C3AED",
         path: "WebOps Development LLC Website/templates/e-commerce-website/",
         badge: "Retail",
         image: "assets/images/templates/e-commerce-website-preview.jpg"
     },
     {
         name: "Service-Oriented Website",
-        description: "Perfect for service businesses with booking systems, service listings, emergency services, and trust-building elements.",
-        features: ["Booking System", "Service Listings", "Trust Elements"],
+        description: "Modern service-business demo (Polished & Co.) with playful hero motion, booking flow, service cards, gallery, offers, and trust sections — built for salons, studios, and local pros.",
+        features: ["Playful Hero", "Booking Flow", "Service Cards"],
         techStack: "Vanilla JavaScript (ES6+), Modern CSS, Semantic HTML5",
         frameworkReady: "Framework-agnostic foundation",
-        color: "#ec4899",
+        color: "#E11D48",
         path: "WebOps Development LLC Website/templates/service-oriented-website/",
         badge: "Service",
         image: "assets/images/templates/service-oriented-website-preview.jpg"
@@ -119,7 +119,7 @@ export const templates = [
 ];
 
 /** Bump when replacing files under assets/images/templates/ so browsers fetch fresh previews. */
-export const TEMPLATE_PREVIEW_ASSET_VERSION = '20260320';
+export const TEMPLATE_PREVIEW_ASSET_VERSION = '20250628e';
 
 /**
  * Cache-bust same-origin template preview paths (not absolute URLs).

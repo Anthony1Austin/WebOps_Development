@@ -9,7 +9,7 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
     color: var(--color-gray-900);
-    background-color: var(--color-white);
+    background: var(--site-page-background);
     transition: background-color var(--transition-base), color var(--transition-base);
 }
 
@@ -82,11 +82,9 @@ img.loaded {
     opacity: 1;
 }
 
-/* Lazy loading placeholder */
 img[data-src]::before {
     content: '';
     display: block;
-    padding-top: 56.25%; /* 16:9 aspect ratio placeholder */
+    padding-top: 56.25%;
     background-color: var(--color-gray-200);
 }
-

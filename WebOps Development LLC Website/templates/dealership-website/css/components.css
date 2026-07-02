@@ -2,12 +2,18 @@
 .btn {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
+    font-family: var(--font-family-heading);
     font-weight: var(--font-weight-semibold);
     text-align: center;
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-full);
     transition: all var(--transition-base);
     cursor: pointer;
     border: 2px solid transparent;
+}
+
+.btn--small {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
 }
 
 .btn--primary {
@@ -23,13 +29,24 @@
 
 .btn--secondary {
     background-color: transparent;
-    color: var(--color-white);
-    border-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .btn--secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--on-dark {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.btn--on-dark:hover {
     background-color: var(--color-white);
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
 }
 
 /* Card Component */
@@ -103,7 +120,7 @@
 .form__textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
 }
 
 .form__textarea {
@@ -171,29 +188,51 @@
 }
 
 /* Dealership-Specific Styles */
-.hero--dealership {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(30, 64, 175, 0.75) 100%),
-                url('../assets/images/lance-asper-Wl6OeSGyOf4-unsplash.jpg') center/cover no-repeat;
-    min-height: 60vh;
-    position: relative;
+.hero__search-bar .btn--primary {
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
-.hero__search-bar {
+/* Trust Bar */
+.trust-bar {
+    background: var(--color-page);
+    padding: var(--spacing-2xl) 0;
+    margin-top: -1px;
+}
+
+.trust-bar__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.trust-item {
     display: flex;
+    align-items: flex-start;
     gap: var(--spacing-md);
-    max-width: 900px;
-    margin: var(--spacing-2xl) auto 0;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(29, 78, 216, 0.1);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
-.hero__filter {
-    padding: var(--spacing-md);
-    border: none;
-    border-radius: var(--border-radius-md);
+.trust-item__icon {
+    font-size: var(--font-size-3xl);
+    flex-shrink: 0;
+}
+
+.trust-item__title {
     font-size: var(--font-size-base);
-    flex: 1;
-    min-width: 150px;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gray-900);
+}
+
+.trust-item__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin: 0;
 }
 
 /* Vehicle Cards */
@@ -206,7 +245,7 @@
 
 .vehicle-card {
     background-color: var(--color-white);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
@@ -239,7 +278,7 @@
     background-color: var(--color-primary);
     color: var(--color-white);
     padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-full);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
 }
@@ -281,10 +320,6 @@
 }
 
 /* Financing Section */
-.financing {
-    background-color: var(--color-gray-50);
-}
-
 .financing__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -306,8 +341,9 @@
 .calculator {
     background-color: var(--color-white);
     padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(29, 78, 216, 0.08);
 }
 
 .calculator__field {
@@ -351,7 +387,7 @@
 .service-card {
     background-color: var(--color-white);
     padding: var(--spacing-2xl);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-xl);
     box-shadow: var(--shadow-md);
     text-align: center;
     transition: all var(--transition-base);
@@ -387,14 +423,6 @@
 @media (max-width: 768px) {
     .financing__grid {
         grid-template-columns: 1fr;
-    }
-    
-    .hero__search-bar {
-        flex-direction: column;
-    }
-    
-    .hero__filter {
-        width: 100%;
     }
 }
 

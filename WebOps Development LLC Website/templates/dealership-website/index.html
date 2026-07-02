@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary SEO Meta Tags -->
-    <title>Your Website Title | Primary Keyword - Secondary Keyword</title>
-    <meta name="title" content="Your Website Title | Primary Keyword - Secondary Keyword">
-    <meta name="description" content="Your compelling 150-160 character meta description that includes your primary keyword and a call to action.">
+    <title>Summit Auto Group | New &amp; Pre-Owned Vehicles</title>
+    <meta name="title" content="Summit Auto Group | New &amp; Pre-Owned Vehicles">
+    <meta name="description" content="Summit Auto Group is a polished dealership demo — inventory search, vehicle listings, financing calculator, and service department. A WebOps Development portfolio template for automotive dealers.">
     <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
     <meta name="author" content="Your Name or Company Name">
     <meta name="robots" content="noindex, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -44,12 +44,12 @@
     <meta name="twitter:site" content="@yourtwitterhandle">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#1D4ED8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Your App Name">
     <meta name="application-name" content="Your App Name">
-    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#1D4ED8">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Favicons -->
@@ -65,12 +65,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/main.css?v=20250628e" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=20250628e">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -103,7 +105,7 @@
     {
         "@context": "https://schema.org",
         "@type": "AutoDealer",
-        "name": "Your Dealership Name",
+        "name": "Summit Auto Group",
         "url": "https://yourwebsite.com",
         "logo": "https://yourwebsite.com/assets/images/logo.png",
         "image": "https://yourwebsite.com/assets/images/dealership-image.jpg",
@@ -167,7 +169,7 @@
     <header class="header" id="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="nav__brand">
-                <a href="index.html" class="nav__logo" aria-label="Home">Logo</a>
+                <a href="index.html" class="nav__logo" aria-label="Summit Auto Group home">Summit <span>Auto</span></a>
             </div>
             
             <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -192,30 +194,46 @@
                 <li class="nav__item">
                     <a href="#contact" class="nav__link">Contact</a>
                 </li>
+                <li class="nav__item">
+                    <a href="#inventory" class="nav__link nav__link--cta">Browse inventory</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
+        <svg class="svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="hero-bottom-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,0 H1 V0.955 C0.84,0.985 0.70,0.925 0.56,0.955 C0.42,0.985 0.28,0.925 0,0.955 Z"/>
+                </clipPath>
+            </defs>
+        </svg>
+
         <!-- Hero Section with Schema.org -->
         <section class="hero hero--dealership" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__background" aria-hidden="true"></div>
+            <div class="hero__particles" aria-hidden="true"></div>
             <div class="hero__container container">
                 <div class="hero__content">
-                    <h1 class="hero__title" itemprop="name">Find Your Perfect Vehicle</h1>
-                    <p class="hero__description" itemprop="description">Browse our extensive inventory of quality pre-owned and new vehicles</p>
+                    <h1 class="hero__title" itemprop="name">
+                        <span class="hero__title-line">Drive with</span>
+                        <span class="hero__title-line hero__title-line--accent">confidence.</span>
+                    </h1>
+                    <p class="hero__description" itemprop="description">Search new and pre-owned inventory, explore financing, and book service — a demo site built for modern dealerships.</p>
                     <div class="hero__search-bar">
-                        <select class="hero__filter">
+                        <select class="hero__filter" aria-label="Filter by make">
                             <option>All Makes</option>
                             <option>Toyota</option>
                             <option>Honda</option>
                             <option>Ford</option>
                             <option>Chevrolet</option>
                         </select>
-                        <select class="hero__filter">
+                        <select class="hero__filter" aria-label="Filter by model">
                             <option>All Models</option>
                         </select>
-                        <select class="hero__filter">
+                        <select class="hero__filter" aria-label="Filter by price">
                             <option>Price Range</option>
                             <option>Under $15,000</option>
                             <option>$15,000 - $25,000</option>
@@ -224,6 +242,56 @@
                         </select>
                         <a href="#inventory" class="btn btn--primary">Search Inventory</a>
                     </div>
+                    <div class="hero__trust">
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">500+</span>
+                            <span class="hero__trust-label">Vehicles in stock</span>
+                        </div>
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">4.9★</span>
+                            <span class="hero__trust-label">Customer rating</span>
+                        </div>
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">Fast</span>
+                            <span class="hero__trust-label">Financing approval</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="trust-bar">
+            <div class="container">
+                <div class="trust-bar__grid">
+                    <div class="trust-item">
+                        <div class="trust-item__icon">🚗</div>
+                        <div class="trust-item__content">
+                            <h3 class="trust-item__title">Certified Pre-Owned</h3>
+                            <p class="trust-item__description">Multi-point inspections on every vehicle</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-item__icon">💳</div>
+                        <div class="trust-item__content">
+                            <h3 class="trust-item__title">Flexible Financing</h3>
+                            <p class="trust-item__description">Competitive rates and trade-ins accepted</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-item__icon">🔧</div>
+                        <div class="trust-item__content">
+                            <h3 class="trust-item__title">Expert Service</h3>
+                            <p class="trust-item__description">Factory-trained technicians on site</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-item__icon">🛡️</div>
+                        <div class="trust-item__content">
+                            <h3 class="trust-item__title">Warranty Options</h3>
+                            <p class="trust-item__description">Extended coverage plans available</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,8 +299,11 @@
         <!-- Featured Inventory Section -->
         <section class="section inventory" id="inventory">
             <div class="container">
-                <h2 class="section__title">Featured Vehicles</h2>
-                <p class="section__description">Browse our hand-picked selection of quality vehicles</p>
+                <div class="section__header">
+                    <span class="section__label">Inventory</span>
+                    <h2 class="section__title">Featured Vehicles</h2>
+                    <p class="section__description">Hand-picked new and pre-owned vehicles with specs, pricing, and quick actions.</p>
+                </div>
                 <div class="inventory__grid">
                     <article class="vehicle-card" itemscope itemtype="https://schema.org/Product">
                         <div class="vehicle-card__image">
@@ -250,8 +321,8 @@
                                 <span class="vehicle-card__price-amount" itemprop="price">$32,999</span>
                             </div>
                             <div class="vehicle-card__actions">
-                                <a href="#view" class="btn btn--primary btn--small">View Details</a>
-                                <a href="#finance" class="btn btn--secondary btn--small">Get Financing</a>
+                                <a href="#inventory" class="btn btn--primary btn--small">View Details</a>
+                                <a href="#financing" class="btn btn--secondary btn--small">Get Financing</a>
                             </div>
                         </div>
                     </article>
@@ -271,8 +342,8 @@
                                 <span class="vehicle-card__price-amount" itemprop="price">$24,999</span>
                             </div>
                             <div class="vehicle-card__actions">
-                                <a href="#view" class="btn btn--primary btn--small">View Details</a>
-                                <a href="#finance" class="btn btn--secondary btn--small">Get Financing</a>
+                                <a href="#inventory" class="btn btn--primary btn--small">View Details</a>
+                                <a href="#financing" class="btn btn--secondary btn--small">Get Financing</a>
                             </div>
                         </div>
                     </article>
@@ -292,14 +363,14 @@
                                 <span class="vehicle-card__price-amount" itemprop="price">$45,999</span>
                             </div>
                             <div class="vehicle-card__actions">
-                                <a href="#view" class="btn btn--primary btn--small">View Details</a>
-                                <a href="#finance" class="btn btn--secondary btn--small">Get Financing</a>
+                                <a href="#inventory" class="btn btn--primary btn--small">View Details</a>
+                                <a href="#financing" class="btn btn--secondary btn--small">Get Financing</a>
                             </div>
                         </div>
                     </article>
                 </div>
                 <div class="inventory__cta">
-                    <a href="#all-inventory" class="btn btn--primary">View All Inventory</a>
+                    <a href="#inventory" class="btn btn--primary">View All Inventory</a>
                 </div>
             </div>
         </section>
@@ -309,15 +380,16 @@
             <div class="container">
                 <div class="financing__grid">
                     <div class="financing__content">
-                        <h2 class="section__title">Easy Financing Options</h2>
-                        <p>Get approved in minutes with competitive rates and flexible terms. We work with multiple lenders to find the best financing solution for you.</p>
+                        <span class="section__label">Financing</span>
+                        <h2 class="section__title">Easy financing options</h2>
+                        <p>Get approved in minutes with competitive rates and flexible terms. We work with multiple lenders to find the best solution for you.</p>
                         <ul class="financing__benefits">
                             <li>✓ Fast approval process</li>
                             <li>✓ Competitive interest rates</li>
                             <li>✓ Flexible payment terms</li>
                             <li>✓ Trade-in accepted</li>
                         </ul>
-                        <a href="#apply" class="btn btn--primary">Apply for Financing</a>
+                        <a href="#financing" class="btn btn--primary">Apply for Financing</a>
                     </div>
                     <div class="financing__calculator">
                         <h3>Payment Calculator</h3>
@@ -351,8 +423,11 @@
         <!-- Service Department Section -->
         <section class="section service-dept" id="service">
             <div class="container">
-                <h2 class="section__title">Service Department</h2>
-                <p class="section__description">Expert service and maintenance for all makes and models</p>
+                <div class="section__header">
+                    <span class="section__label">Service</span>
+                    <h2 class="section__title">Service Department</h2>
+                    <p class="section__description">Expert maintenance and repairs for all makes and models.</p>
+                </div>
                 <div class="service-dept__grid">
                     <div class="service-card">
                         <div class="service-card__icon">🔧</div>
@@ -371,7 +446,7 @@
                     </div>
                 </div>
                 <div class="service-dept__cta">
-                    <a href="#schedule" class="btn btn--primary">Schedule Service</a>
+                    <a href="#service" class="btn btn--primary">Schedule Service</a>
                 </div>
             </div>
         </section>
@@ -379,16 +454,20 @@
         <!-- Contact Section with Schema.org -->
         <section class="section contact" id="contact" itemscope itemtype="https://schema.org/ContactPage">
             <div class="container">
-                <h2 class="section__title">Contact Us</h2>
+                <div class="section__header">
+                    <span class="section__label">Contact</span>
+                    <h2 class="section__title">Visit or reach out</h2>
+                    <p class="section__description">Questions about inventory, financing, or service? We're here to help.</p>
+                </div>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
-                    <div class="contact__info" style="margin-bottom: 2rem;">
-                        <p itemprop="name"><strong>Your Business Name</strong></p>
+                    <div class="contact__info" style="margin-bottom: 2rem; text-align: center;">
+                        <p itemprop="name"><strong>Summit Auto Group</strong></p>
                         <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <span itemprop="streetAddress">123 Main Street</span><br>
                             <span itemprop="addressLocality">City</span>, <span itemprop="addressRegion">State</span> <span itemprop="postalCode">12345</span>
                         </p>
                         <p>Phone: <a href="tel:+1XXXXXXXXXX" itemprop="telephone">+1 (XXX) XXX-XXXX</a></p>
-                        <p>Email: <a href="mailto:info@yourwebsite.com" itemprop="email">info@yourwebsite.com</a></p>
+                        <p>Email: <a href="mailto:sales@summitauto.demo" itemprop="email">sales@summitauto.demo</a></p>
                     </div>
                 </div>
                 <form class="contact__form" id="contact-form" aria-label="Contact form">
@@ -414,7 +493,10 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
-                <p class="footer__text">&copy; <span id="current-year"></span> Your Company. All rights reserved.</p>
+                <div>
+                    <p class="footer__brand">Summit Auto Group</p>
+                    <p class="footer__text">&copy; <span id="current-year"></span> Summit Auto Group. Demo template by WebOps Development.</p>
+                </div>
                 <nav class="footer__nav" aria-label="Footer navigation">
                     <a href="/privacy-policy">Privacy Policy</a> | 
                     <a href="/terms-of-service">Terms of Service</a> | 

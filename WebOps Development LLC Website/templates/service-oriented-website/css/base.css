@@ -9,7 +9,7 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
     color: var(--color-gray-900);
-    background-color: var(--color-white);
+    background: var(--site-page-background);
     transition: background-color var(--transition-base), color var(--transition-base);
 }
 

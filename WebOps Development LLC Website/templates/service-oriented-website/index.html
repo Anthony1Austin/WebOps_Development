@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary SEO Meta Tags -->
-    <title>Your Website Title | Primary Keyword - Secondary Keyword</title>
-    <meta name="title" content="Your Website Title | Primary Keyword - Secondary Keyword">
-    <meta name="description" content="Your compelling 150-160 character meta description that includes your primary keyword and a call to action.">
+    <title>Polished &amp; Co. | Nail Salon &amp; Beauty Studio</title>
+    <meta name="title" content="Polished &amp; Co. | Nail Salon &amp; Beauty Studio">
+    <meta name="description" content="Polished &amp; Co. is a modern nail salon demo site — services, gallery, booking, and special offers. A WebOps Development portfolio template for service businesses.">
     <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
     <meta name="author" content="Your Name or Company Name">
     <meta name="robots" content="noindex, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -44,12 +44,12 @@
     <meta name="twitter:site" content="@yourtwitterhandle">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#BE123C">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Your App Name">
     <meta name="application-name" content="Your App Name">
-    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#BE123C">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Favicons -->
@@ -65,12 +65,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/main.css?v=20250628b" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=20250628b">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -130,7 +132,7 @@
     <header class="header" id="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="nav__brand">
-                <a href="index.html" class="nav__logo" aria-label="Home">Logo</a>
+                <a href="index.html" class="nav__logo" aria-label="Polished and Co. home">Polished <span>&amp;</span> Co.</a>
             </div>
             
             <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -155,21 +157,37 @@
                 <li class="nav__item">
                     <a href="#contact" class="nav__link">Contact</a>
                 </li>
+                <li class="nav__item">
+                    <a href="#book" class="nav__link nav__link--cta">Book now</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
+        <svg class="svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="hero-bottom-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,0 H1 V0.955 C0.84,0.985 0.70,0.925 0.56,0.955 C0.42,0.985 0.28,0.925 0,0.955 Z"/>
+                </clipPath>
+            </defs>
+        </svg>
+
         <!-- Hero Section with Schema.org -->
         <section class="hero hero--salon" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__background" aria-hidden="true"></div>
+            <div class="hero__particles" aria-hidden="true"></div>
             <div class="hero__container container">
                 <div class="hero__content">
-                    <h1 class="hero__title" itemprop="name">Pamper Yourself with Perfect Nails</h1>
-                    <p class="hero__description" itemprop="description">Professional nail care and beauty services. Book your appointment and experience luxury at its finest!</p>
+                    <h1 class="hero__title" itemprop="name">
+                        <span class="hero__title-line">Nails worth</span>
+                        <span class="hero__title-line hero__title-line--accent">showing off.</span>
+                    </h1>
+                    <p class="hero__description" itemprop="description">Book an appointment. Walk out polished. A demo site built to show what a modern service business website can look like.</p>
                     <div class="hero__buttons">
                         <a href="#book" class="btn btn--primary" aria-label="Book appointment">Book Appointment</a>
-                        <a href="#services" class="btn btn--secondary" aria-label="View services">Our Services</a>
+                        <a href="#services" class="btn btn--on-dark" aria-label="View services">Our Services</a>
                     </div>
                     <div class="hero__trust">
                         <div class="hero__trust-item">
@@ -225,12 +243,36 @@
             </div>
         </section>
 
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__media reveal-on-scroll">
+                        <img src="assets/images/bryony-elena-tXwBDZS2JxQ-unsplash.jpg" alt="Nail technician working in a bright, modern salon studio" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="about__content reveal-on-scroll">
+                        <span class="section__label">About</span>
+                        <h2 class="about__title">A studio built around the details.</h2>
+                        <p class="about__text">Polished &amp; Co. is a demo brand for service businesses — the kind of site a salon, spa, or studio needs to explain who they are, show their work, and make booking obvious.</p>
+                        <p class="about__text">This template highlights the sections that convert: trust signals up top, services with pricing cues, a visual gallery, offers, reviews, and a booking form.</p>
+                        <ul class="about__list">
+                            <li>Walk-in friendly hours, seven days a week</li>
+                            <li>Licensed techs and premium product lines</li>
+                            <li>Online booking with service selection built in</li>
+                        </ul>
+                        <a href="#book" class="btn btn--primary">Book a visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section with Schema.org -->
         <section class="section services" id="services">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Our Services</h2>
-                    <p class="section__description">Comprehensive nail care and beauty treatments</p>
+                    <span class="section__label">Services</span>
+                    <h2 class="section__title">What we offer</h2>
+                    <p class="section__description">Manicures, pedicures, nail art, and spa packages — laid out clearly so visitors know what to book.</p>
                 </div>
                 <div class="services__grid" itemscope itemtype="https://schema.org/Service">
                     <article class="service-card" itemscope itemtype="https://schema.org/Service">
@@ -295,8 +337,9 @@
         <section class="section gallery" id="portfolio">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Our Work</h2>
-                    <p class="section__description">Beautiful nail art and designs we've created</p>
+                    <span class="section__label">Portfolio</span>
+                    <h2 class="section__title">Recent work</h2>
+                    <p class="section__description">A gallery grid with hover labels — the kind of polish that sells the craft.</p>
                 </div>
                 <div class="gallery__grid" itemscope itemtype="https://schema.org/ItemList">
                     <div class="gallery__item">
@@ -355,8 +398,9 @@
         <section class="section offers">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Special Offers</h2>
-                    <p class="section__description">Limited time deals and packages</p>
+                    <span class="section__label">Offers</span>
+                    <h2 class="section__title">Special offers</h2>
+                    <p class="section__description">Featured deals and packages to drive first-time bookings.</p>
                 </div>
                 <div class="offers__grid">
                     <div class="offer-card offer-card--featured">
@@ -403,8 +447,9 @@
         <section class="section testimonials">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">What Our Clients Say</h2>
-                    <p class="section__description">Real reviews from our satisfied customers</p>
+                    <span class="section__label">Reviews</span>
+                    <h2 class="section__title">What clients say</h2>
+                    <p class="section__description">Social proof blocks like these build trust fast on service sites.</p>
                 </div>
                 <div class="testimonials__grid">
                     <div class="testimonial-card">
@@ -440,8 +485,9 @@
             <div class="container">
                 <div class="booking__grid">
                     <div class="booking__content">
-                        <h2 class="section__title">Book Your Appointment</h2>
-                        <p class="section__description">Schedule your visit online or call us directly</p>
+                        <span class="section__label">Booking</span>
+                        <h2 class="section__title">Book your appointment</h2>
+                        <p class="section__description">Schedule online or call — hours and location up front.</p>
                         <div class="booking__info">
                             <div class="booking__info-item">
                                 <strong>Phone:</strong> <a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a>
@@ -488,10 +534,13 @@
         <!-- Contact Section with Schema.org -->
         <section class="section contact" id="contact" itemscope itemtype="https://schema.org/ContactPage">
             <div class="container">
-                <h2 class="section__title">Contact Us</h2>
+                <div class="section__header">
+                    <span class="section__label">Contact</span>
+                    <h2 class="section__title">Get in touch</h2>
+                </div>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
                     <div class="contact__info" style="margin-bottom: 2rem;">
-                        <p itemprop="name"><strong>Your Business Name</strong></p>
+                        <p itemprop="name"><strong>Polished &amp; Co. Nails</strong></p>
                         <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <span itemprop="streetAddress">123 Main Street</span><br>
                             <span itemprop="addressLocality">City</span>, <span itemprop="addressRegion">State</span> <span itemprop="postalCode">12345</span>
@@ -523,7 +572,10 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
-                <p class="footer__text">&copy; <span id="current-year"></span> Your Company. All rights reserved.</p>
+                <div>
+                    <p class="footer__brand">Polished &amp; Co.</p>
+                    <p class="footer__text">&copy; <span id="current-year"></span> Demo template by <a href="https://webopsdevelopment.com" style="color: inherit;">WebOps Development</a></p>
+                </div>
                 <nav class="footer__nav" aria-label="Footer navigation">
                     <a href="/privacy-policy">Privacy Policy</a> | 
                     <a href="/terms-of-service">Terms of Service</a> | 

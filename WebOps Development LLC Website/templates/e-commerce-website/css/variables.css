@@ -1,98 +1,116 @@
-/* CSS Custom Properties - Easy Theming */
+/* CSS Custom Properties — Vantage Market e-commerce demo */
 :root {
-    /* Colors - Primary (E-commerce: Vibrant Purple - Retail) */
-    --color-primary: #9333ea;
-    --color-primary-dark: #7e22ce;
-    --color-primary-light: #a855f7;
-    
-    /* Colors - Secondary (E-commerce: Teal Accent) */
-    --color-secondary: #14b8a6;
-    --color-secondary-dark: #0d9488;
-    --color-secondary-light: #2dd4bf;
-    
-    /* Colors - Neutral */
+    --color-primary: #7C3AED;
+    --color-primary-dark: #6D28D9;
+    --color-primary-light: #A78BFA;
+
+    --color-secondary: #14B8A6;
+    --color-secondary-dark: #0F766E;
+    --color-secondary-light: #2DD4BF;
+
+    --color-accent: #F59E0B;
+    --color-accent-dark: #D97706;
+    --color-accent-light: #FCD34D;
+
+    --color-page: #FAFAF9;
     --color-white: #ffffff;
-    --color-black: #000000;
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #6b7280;
-    --color-gray-600: #4b5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
-    
-    /* Colors - Semantic */
+    --color-black: #0C0A09;
+
+    --color-gray-50: #FAFAF9;
+    --color-gray-100: #F5F5F4;
+    --color-gray-200: #E7E5E4;
+    --color-gray-300: #D6D3D1;
+    --color-gray-400: #A8A29E;
+    --color-gray-500: #78716C;
+    --color-gray-600: #57534E;
+    --color-gray-700: #44403C;
+    --color-gray-800: #292524;
+    --color-gray-900: #1C1917;
+
     --color-success: #10b981;
     --color-error: #ef4444;
     --color-warning: #f59e0b;
-    --color-info: #3b82f6;
-    
-    /* Typography */
-    --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-heading: 'Inter', var(--font-family-primary);
-    --font-family-mono: 'Fira Code', 'Courier New', monospace;
-    
-    --font-size-xs: 0.75rem;    /* 12px */
-    --font-size-sm: 0.875rem;   /* 14px */
-    --font-size-base: 1rem;     /* 16px */
-    --font-size-lg: 1.125rem;   /* 18px */
-    --font-size-xl: 1.25rem;    /* 20px */
-    --font-size-2xl: 1.5rem;    /* 24px */
-    --font-size-3xl: 1.875rem;  /* 30px */
-    --font-size-4xl: 2.25rem;   /* 36px */
-    --font-size-5xl: 3rem;      /* 48px */
-    
+    --color-info: #2563eb;
+
+    --site-page-background:
+        radial-gradient(900px 480px at 10% 10%, rgba(124, 58, 237, 0.08), transparent 58%),
+        radial-gradient(800px 420px at 90% 18%, rgba(20, 184, 166, 0.06), transparent 55%),
+        radial-gradient(700px 500px at 50% 100%, rgba(245, 158, 11, 0.05), transparent 60%),
+        var(--color-page);
+
+    --section-tint-violet: rgba(124, 58, 237, 0.045);
+    --section-tint-teal: rgba(20, 184, 166, 0.04);
+    --section-tint-light: rgba(255, 255, 255, 0.82);
+
+    --hero-photo: url('../assets/images/vitaly-gariev-VZK7zlnUVwI-unsplash.jpg');
+    --hero-particles:
+        radial-gradient(circle at 18% 35%, rgba(167, 139, 250, 0.38), transparent 55%),
+        radial-gradient(circle at 82% 55%, rgba(245, 158, 11, 0.28), transparent 55%),
+        radial-gradient(circle at 45% 85%, rgba(124, 58, 237, 0.22), transparent 60%),
+        radial-gradient(ellipse 90% 55% at 80% 92%, rgba(20, 184, 166, 0.3), transparent 58%);
+
+    --font-family-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-heading: 'Space Grotesk', var(--font-family-primary);
+    --font-family-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    
-    --line-height-tight: 1.25;
+    --font-weight-extrabold: 800;
+
+    --line-height-tight: 1.15;
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.75;
-    
-    /* Spacing */
-    --spacing-xs: 0.25rem;   /* 4px */
-    --spacing-sm: 0.5rem;    /* 8px */
-    --spacing-md: 1rem;      /* 16px */
-    --spacing-lg: 1.5rem;    /* 24px */
-    --spacing-xl: 2rem;      /* 32px */
-    --spacing-2xl: 3rem;     /* 48px */
-    --spacing-3xl: 4rem;     /* 64px */
-    --spacing-4xl: 6rem;     /* 96px */
-    
-    /* Layout */
+
+    --letter-spacing-label: 0.12em;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+
     --container-max-width: 1200px;
     --container-padding: var(--spacing-md);
-    
-    --header-height: 70px;
+    --header-height: 88px;
     --footer-height: auto;
-    
-    /* Border */
-    --border-radius-sm: 0.25rem;   /* 4px */
-    --border-radius-md: 0.5rem;    /* 8px */
-    --border-radius-lg: 1rem;     /* 16px */
+
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
     --border-radius-full: 9999px;
-    
+
     --border-width: 1px;
     --border-color: var(--color-gray-200);
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    
-    /* Transitions */
+
+    --shadow-sm: 0 1px 2px 0 rgba(12, 10, 9, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(12, 10, 9, 0.08), 0 2px 4px -1px rgba(12, 10, 9, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(12, 10, 9, 0.08), 0 4px 6px -2px rgba(12, 10, 9, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(12, 10, 9, 0.08), 0 10px 10px -5px rgba(12, 10, 9, 0.03);
+    --shadow-2xl: 0 25px 50px -12px rgba(12, 10, 9, 0.18);
+
     --transition-fast: 150ms ease-in-out;
     --transition-base: 300ms ease-in-out;
     --transition-slow: 500ms ease-in-out;
-    
-    /* Z-index */
+
     --z-dropdown: 1000;
     --z-sticky: 1020;
     --z-fixed: 1030;
@@ -102,19 +120,11 @@
     --z-tooltip: 1070;
 }
 
-/* Dark Theme */
-[data-theme="dark"] {
-    --color-white: #111827;
-    --color-black: #ffffff;
-    --color-gray-50: #1f2937;
-    --color-gray-100: #374151;
-    --color-gray-200: #4b5563;
-    --color-gray-300: #6b7280;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #d1d5db;
-    --color-gray-600: #e5e7eb;
-    --color-gray-700: #f3f4f6;
-    --color-gray-800: #f9fafb;
-    --color-gray-900: #ffffff;
+@media (max-width: 768px) {
+    :root { --header-height: 76px; }
 }
 
+[data-theme="dark"] {
+    --color-page: #1C1917;
+    --site-page-background: var(--color-page);
+}

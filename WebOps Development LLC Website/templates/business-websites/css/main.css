@@ -1,8 +1,7 @@
 /* Import all CSS files in order */
-@import url('reset.css');
-@import url('variables.css');
-@import url('base.css');
-@import url('layout.css');
-@import url('components.css');
-@import url('utilities.css');
-
+@import url('reset.css?v=20250628c');
+@import url('variables.css?v=20250628c');
+@import url('base.css?v=20250628c');
+@import url('layout.css?v=20250628c');
+@import url('components.css?v=20250628c');
+@import url('utilities.css?v=20250628c');

@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary SEO Meta Tags -->
-    <title>Your Website Title | Primary Keyword - Secondary Keyword</title>
-    <meta name="title" content="Your Website Title | Primary Keyword - Secondary Keyword">
-    <meta name="description" content="Your compelling 150-160 character meta description that includes your primary keyword and a call to action.">
+    <title>Vantage Market | Curated Online Store Demo</title>
+    <meta name="title" content="Vantage Market | Curated Online Store Demo">
+    <meta name="description" content="Vantage Market is a polished e-commerce demo — featured products, deals, categories, cart preview, and newsletter. A WebOps Development portfolio template for online stores.">
     <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
     <meta name="author" content="Your Name or Company Name">
     <meta name="robots" content="noindex, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -44,12 +44,12 @@
     <meta name="twitter:site" content="@yourtwitterhandle">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#7C3AED">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Your App Name">
     <meta name="application-name" content="Your App Name">
-    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#7C3AED">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Favicons -->
@@ -65,19 +65,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/main.css?v=20250628d" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=20250628d">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Your Website Name",
+        "name": "Vantage Market",
         "url": "https://yourwebsite.com",
         "description": "Your website description",
         "publisher": {
@@ -130,7 +132,7 @@
     <header class="header" id="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="nav__brand">
-                <a href="index.html" class="nav__logo" aria-label="Home">Logo</a>
+                <a href="index.html" class="nav__logo" aria-label="Vantage Market home">Vantage <span>Market</span></a>
             </div>
             
             <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -158,21 +160,51 @@
                 <li class="nav__item">
                     <a href="#contact" class="nav__link">Contact</a>
                 </li>
+                <li class="nav__item">
+                    <a href="#shop" class="nav__link nav__link--cta">Shop now</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
+        <svg class="svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="hero-bottom-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,0 H1 V0.955 C0.84,0.985 0.70,0.925 0.56,0.955 C0.42,0.985 0.28,0.925 0,0.955 Z"/>
+                </clipPath>
+            </defs>
+        </svg>
+
         <!-- Hero Section with Schema.org -->
         <section class="hero hero--ecommerce" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__background" aria-hidden="true"></div>
+            <div class="hero__particles" aria-hidden="true"></div>
             <div class="hero__container container">
                 <div class="hero__content">
-                    <h1 class="hero__title" itemprop="name">Shop the Latest Trends</h1>
-                    <p class="hero__description" itemprop="description">Discover quality products at unbeatable prices. Free shipping on orders over $50!</p>
+                    <h1 class="hero__title" itemprop="name">
+                        <span class="hero__title-line">Shop what</span>
+                        <span class="hero__title-line hero__title-line--accent">stands out.</span>
+                    </h1>
+                    <p class="hero__description" itemprop="description">Curated products, clear categories, and a checkout-ready layout — a demo store built to show what a modern e-commerce site can look like.</p>
                     <div class="hero__buttons">
                         <a href="#shop" class="btn btn--primary" aria-label="Shop now">Shop Now</a>
-                        <a href="#deals" class="btn btn--secondary" aria-label="View deals">View Deals</a>
+                        <a href="#deals" class="btn btn--on-dark" aria-label="View deals">View Deals</a>
+                    </div>
+                    <div class="hero__trust">
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">2k+</span>
+                            <span class="hero__trust-label">Products</span>
+                        </div>
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">4.9★</span>
+                            <span class="hero__trust-label">Avg. Rating</span>
+                        </div>
+                        <div class="hero__trust-item">
+                            <span class="hero__trust-number">Free</span>
+                            <span class="hero__trust-label">Shipping $50+</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,12 +246,36 @@
             </div>
         </section>
 
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__media reveal-on-scroll">
+                        <img src="assets/images/manny-becerra-0sihmMSmnoE-unsplash.jpg" alt="Curated products displayed in a modern retail setting" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="about__content reveal-on-scroll">
+                        <span class="section__label">About</span>
+                        <h2 class="about__title">A store built to convert.</h2>
+                        <p class="about__text">Vantage Market is a demo brand for online retailers — the kind of site a DTC brand or boutique needs to showcase products, build trust, and guide shoppers to checkout.</p>
+                        <p class="about__text">This template highlights the sections that sell: trust signals up top, featured products, seasonal deals, category browsing, reviews, and a cart preview.</p>
+                        <ul class="about__list">
+                            <li>Free shipping on orders over $50</li>
+                            <li>Secure checkout and easy 30-day returns</li>
+                            <li>Product cards with ratings, badges, and quick actions</li>
+                        </ul>
+                        <a href="#shop" class="btn btn--primary">Browse the shop</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Featured Products Section -->
         <section class="section featured-products" id="shop" itemscope itemtype="https://schema.org/ItemList">
             <div class="container">
                 <div class="section__header">
+                    <span class="section__label">Shop</span>
                     <h2 class="section__title">Featured Products</h2>
-                    <p class="section__description">Handpicked selections just for you</p>
+                    <p class="section__description">Handpicked selections with ratings, pricing, and add-to-cart actions.</p>
                 </div>
                 <div class="products__grid">
                     <article class="product-card" itemscope itemtype="https://schema.org/Product">
@@ -316,8 +372,9 @@
         <section class="section deals" id="deals">
             <div class="container">
                 <div class="section__header">
+                    <span class="section__label">Deals</span>
                     <h2 class="section__title">Special Offers</h2>
-                    <p class="section__description">Limited time deals you don't want to miss</p>
+                    <p class="section__description">Limited-time promotions to drive urgency and discovery.</p>
                 </div>
                 <div class="deals__grid">
                     <div class="deal-card deal-card--large">
@@ -338,7 +395,7 @@
                         <div class="deal-card__content">
                             <span class="deal-card__badge">New Arrivals</span>
                             <h3 class="deal-card__title">Fresh Styles</h3>
-                            <a href="#shop" class="btn btn--secondary">Explore</a>
+                            <a href="#shop" class="btn btn--on-dark">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -349,32 +406,33 @@
         <section class="section categories" id="categories">
             <div class="container">
                 <div class="section__header">
+                    <span class="section__label">Browse</span>
                     <h2 class="section__title">Shop by Category</h2>
-                    <p class="section__description">Browse our curated collections</p>
+                    <p class="section__description">Curated collections to help shoppers find what they need fast.</p>
                 </div>
                 <div class="categories__grid">
-                    <a href="#category1" class="category-card">
+                    <a href="#shop" class="category-card">
                         <div class="category-card__image">
                             <img src="assets/images/eyestetix-studio-xsONJATRHgA-unsplash.jpg" alt="Electronics" loading="lazy">
                         </div>
                         <h3 class="category-card__title">Electronics</h3>
                         <p class="category-card__count">120+ Products</p>
                     </a>
-                    <a href="#category2" class="category-card">
+                    <a href="#shop" class="category-card">
                         <div class="category-card__image">
                             <img src="assets/images/jason-leung-EjHJsMrwHdQ-unsplash.jpg" alt="Fashion" loading="lazy">
                         </div>
                         <h3 class="category-card__title">Fashion</h3>
                         <p class="category-card__count">85+ Products</p>
                     </a>
-                    <a href="#category3" class="category-card">
+                    <a href="#shop" class="category-card">
                         <div class="category-card__image">
                             <img src="assets/images/marissa-grootes-D4jRahaUaIc-unsplash.jpg" alt="Home & Living" loading="lazy">
                         </div>
                         <h3 class="category-card__title">Home & Living</h3>
                         <p class="category-card__count">95+ Products</p>
                     </a>
-                    <a href="#category4" class="category-card">
+                    <a href="#shop" class="category-card">
                         <div class="category-card__image">
                             <img src="assets/images/vitaly-gariev-lbOaKbGNcrk-unsplash.jpg" alt="Accessories" loading="lazy">
                         </div>
@@ -389,8 +447,9 @@
         <section class="section testimonials">
             <div class="container">
                 <div class="section__header">
+                    <span class="section__label">Reviews</span>
                     <h2 class="section__title">What Our Customers Say</h2>
-                    <p class="section__description">Real reviews from satisfied shoppers</p>
+                    <p class="section__description">Social proof that builds confidence before checkout.</p>
                 </div>
                 <div class="testimonials__grid">
                     <div class="testimonial-card">
@@ -436,19 +495,38 @@
             </div>
         </section>
 
+        <!-- Cart Demo Section -->
+        <section class="section cart-demo" id="cart">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__label">Cart</span>
+                    <h2 class="section__title">Your bag</h2>
+                    <p class="section__description">Demo checkout preview — cart UI without a backend.</p>
+                </div>
+                <div class="cart-demo__panel reveal-on-scroll">
+                    <p class="cart-demo__empty">Your cart is empty — add items from the shop above.</p>
+                    <a href="#shop" class="btn btn--primary">Continue shopping</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section with Schema.org -->
         <section class="section contact" id="contact" itemscope itemtype="https://schema.org/ContactPage">
             <div class="container">
-                <h2 class="section__title">Contact Us</h2>
+                <div class="section__header">
+                    <span class="section__label">Contact</span>
+                    <h2 class="section__title">Get in touch</h2>
+                    <p class="section__description">Questions about orders, shipping, or returns? Send us a message.</p>
+                </div>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
-                    <div class="contact__info" style="margin-bottom: 2rem;">
-                        <p itemprop="name"><strong>Your Business Name</strong></p>
+                    <div class="contact__info" style="margin-bottom: 2rem; text-align: center;">
+                        <p itemprop="name"><strong>Vantage Market</strong></p>
                         <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <span itemprop="streetAddress">123 Main Street</span><br>
                             <span itemprop="addressLocality">City</span>, <span itemprop="addressRegion">State</span> <span itemprop="postalCode">12345</span>
                         </p>
                         <p>Phone: <a href="tel:+1XXXXXXXXXX" itemprop="telephone">+1 (XXX) XXX-XXXX</a></p>
-                        <p>Email: <a href="mailto:info@yourwebsite.com" itemprop="email">info@yourwebsite.com</a></p>
+                        <p>Email: <a href="mailto:hello@vantagemarket.demo" itemprop="email">hello@vantagemarket.demo</a></p>
                     </div>
                 </div>
                 <form class="contact__form" id="contact-form" aria-label="Contact form">
@@ -474,7 +552,10 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
-                <p class="footer__text">&copy; <span id="current-year"></span> Your Company. All rights reserved.</p>
+                <div>
+                    <p class="footer__brand">Vantage Market</p>
+                    <p class="footer__text">&copy; <span id="current-year"></span> Vantage Market. Demo template by WebOps Development.</p>
+                </div>
                 <nav class="footer__nav" aria-label="Footer navigation">
                     <a href="/privacy-policy">Privacy Policy</a> | 
                     <a href="/terms-of-service">Terms of Service</a> | 

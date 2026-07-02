@@ -1,97 +1,122 @@
-/* CSS Custom Properties - Easy Theming */
+/* CSS Custom Properties — Polished & Co. service demo */
 :root {
-    /* Colors - Primary (Nail Salon: Soft Pink) */
-    --color-primary: #ec4899;
-    --color-primary-dark: #d81b60;
-    --color-primary-light: #f8b5c4;
-    
-    /* Colors - Secondary (Nail Salon: Rose Gold) */
-    --color-secondary: #e8a87c;
-    --color-secondary-dark: #d49464;
-    --color-secondary-light: #f4c2a1;
-    
-    /* Colors - Neutral */
+    /* Colors — warm rose + amber (playful, premium) */
+    --color-primary: #E11D48;
+    --color-primary-dark: #BE123C;
+    --color-primary-light: #FB7185;
+
+    --color-secondary: #9D174D;
+    --color-secondary-dark: #831843;
+    --color-secondary-light: #FBCFE8;
+
+    --color-accent: #F59E0B;
+    --color-accent-dark: #D97706;
+    --color-accent-light: #FCD34D;
+
+    --color-page: #FDF8F6;
     --color-white: #ffffff;
-    --color-black: #000000;
-    --color-gray-50: #fef7f7;
-    --color-gray-100: #fce4ec;
-    --color-gray-200: #f8bbd0;
-    --color-gray-300: #f48fb1;
-    --color-gray-400: #e91e63;
-    --color-gray-500: #ad1457;
-    --color-gray-600: #880e4f;
-    --color-gray-700: #4a148c;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
-    
-    /* Colors - Semantic */
+    --color-black: #1C1917;
+
+    --color-gray-50: #FAFAF9;
+    --color-gray-100: #F5F5F4;
+    --color-gray-200: #E7E5E4;
+    --color-gray-300: #D6D3D1;
+    --color-gray-400: #A8A29E;
+    --color-gray-500: #78716C;
+    --color-gray-600: #57534E;
+    --color-gray-700: #44403C;
+    --color-gray-800: #292524;
+    --color-gray-900: #1C1917;
+
     --color-success: #10b981;
     --color-error: #ef4444;
     --color-warning: #f59e0b;
-    --color-info: #3b82f6;
-    
+    --color-info: #2563eb;
+
+    --site-page-background:
+        radial-gradient(900px 480px at 8% 12%, rgba(225, 29, 72, 0.08), transparent 58%),
+        radial-gradient(800px 420px at 92% 20%, rgba(245, 158, 11, 0.07), transparent 55%),
+        radial-gradient(700px 500px at 50% 100%, rgba(157, 23, 77, 0.05), transparent 60%),
+        var(--color-page);
+
+    --section-tint-warm: rgba(225, 29, 72, 0.045);
+    --section-tint-light: rgba(255, 255, 255, 0.82);
+
+    --hero-photo: url('../assets/images/theclan-nailsalon-t91cj5p3a-o-unsplash.jpg');
+    --hero-particles:
+        radial-gradient(circle at 18% 35%, rgba(251, 113, 133, 0.4), transparent 55%),
+        radial-gradient(circle at 82% 55%, rgba(245, 158, 11, 0.28), transparent 55%),
+        radial-gradient(circle at 45% 85%, rgba(225, 29, 72, 0.22), transparent 60%),
+        radial-gradient(ellipse 90% 55% at 80% 92%, rgba(251, 207, 232, 0.35), transparent 58%);
+
     /* Typography */
-    --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-heading: 'Inter', var(--font-family-primary);
-    --font-family-mono: 'Fira Code', 'Courier New', monospace;
-    
-    --font-size-xs: 0.75rem;    /* 12px */
-    --font-size-sm: 0.875rem;   /* 14px */
-    --font-size-base: 1rem;     /* 16px */
-    --font-size-lg: 1.125rem;   /* 18px */
-    --font-size-xl: 1.25rem;    /* 20px */
-    --font-size-2xl: 1.5rem;    /* 24px */
-    --font-size-3xl: 1.875rem;  /* 30px */
-    --font-size-4xl: 2.25rem;   /* 36px */
-    --font-size-5xl: 3rem;      /* 48px */
-    
+    --font-family-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-heading: 'Space Grotesk', var(--font-family-primary);
+    --font-family-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    
-    --line-height-tight: 1.25;
+    --font-weight-extrabold: 800;
+
+    --line-height-tight: 1.15;
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.75;
-    
+
+    --letter-spacing-label: 0.12em;
+
     /* Spacing */
-    --spacing-xs: 0.25rem;   /* 4px */
-    --spacing-sm: 0.5rem;    /* 8px */
-    --spacing-md: 1rem;      /* 16px */
-    --spacing-lg: 1.5rem;    /* 24px */
-    --spacing-xl: 2rem;      /* 32px */
-    --spacing-2xl: 3rem;     /* 48px */
-    --spacing-3xl: 4rem;     /* 64px */
-    --spacing-4xl: 6rem;     /* 96px */
-    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+
     /* Layout */
     --container-max-width: 1200px;
     --container-padding: var(--spacing-md);
-    
-    --header-height: 70px;
+    --header-height: 88px;
     --footer-height: auto;
-    
+
     /* Border */
-    --border-radius-sm: 0.25rem;   /* 4px */
-    --border-radius-md: 0.5rem;    /* 8px */
-    --border-radius-lg: 1rem;     /* 16px */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
     --border-radius-full: 9999px;
-    
+
     --border-width: 1px;
     --border-color: var(--color-gray-200);
-    
+
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    
+    --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -1px rgba(28, 25, 23, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.08), 0 4px 6px -2px rgba(28, 25, 23, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.08), 0 10px 10px -5px rgba(28, 25, 23, 0.03);
+    --shadow-2xl: 0 25px 50px -12px rgba(28, 25, 23, 0.18);
+
     /* Transitions */
     --transition-fast: 150ms ease-in-out;
     --transition-base: 300ms ease-in-out;
     --transition-slow: 500ms ease-in-out;
-    
+
     /* Z-index */
     --z-dropdown: 1000;
     --z-sticky: 1020;
@@ -102,19 +127,25 @@
     --z-tooltip: 1070;
 }
 
-/* Dark Theme */
-[data-theme="dark"] {
-    --color-white: #111827;
-    --color-black: #ffffff;
-    --color-gray-50: #1f2937;
-    --color-gray-100: #374151;
-    --color-gray-200: #4b5563;
-    --color-gray-300: #6b7280;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #d1d5db;
-    --color-gray-600: #e5e7eb;
-    --color-gray-700: #f3f4f6;
-    --color-gray-800: #f9fafb;
-    --color-gray-900: #ffffff;
+@media (max-width: 768px) {
+    :root {
+        --header-height: 76px;
+    }
 }
 
+[data-theme="dark"] {
+    --color-page: #1C1917;
+    --color-white: #FAFAF9;
+    --color-black: #FDF8F6;
+    --color-gray-50: #292524;
+    --color-gray-100: #44403C;
+    --color-gray-200: #57534E;
+    --color-gray-300: #78716C;
+    --color-gray-400: #A8A29E;
+    --color-gray-500: #D6D3D1;
+    --color-gray-600: #E7E5E4;
+    --color-gray-700: #F5F5F4;
+    --color-gray-800: #FAFAF9;
+    --color-gray-900: #FFFFFF;
+    --site-page-background: var(--color-page);
+}

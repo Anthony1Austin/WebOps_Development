@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary SEO Meta Tags -->
-    <title>Your Website Title | Primary Keyword - Secondary Keyword</title>
-    <meta name="title" content="Your Website Title | Primary Keyword - Secondary Keyword">
-    <meta name="description" content="Your compelling 150-160 character meta description that includes your primary keyword and a call to action.">
+    <title>Northline Advisory | Business Consulting &amp; Growth Strategy</title>
+    <meta name="title" content="Northline Advisory | Business Consulting &amp; Growth Strategy">
+    <meta name="description" content="Northline Advisory is a corporate business website demo — consulting, case studies, team profiles, and lead capture. A WebOps Development portfolio template.">
     <meta name="keywords" content="keyword1, keyword2, keyword3, relevant keywords">
     <meta name="author" content="Your Name or Company Name">
     <meta name="robots" content="noindex, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -44,12 +44,12 @@
     <meta name="twitter:site" content="@yourtwitterhandle">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#2563EB">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Your App Name">
     <meta name="application-name" content="Your App Name">
-    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563EB">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Favicons -->
@@ -67,25 +67,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/main.css?v=20250628c" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    <link rel="preload" href="js/navigation.js" as="script">
-    <link rel="preload" href="assets/images/logo.png" as="image">
-    
-    <!-- Prefetch Next Page Resources -->
-    <link rel="prefetch" href="css/components.css">
-    <link rel="prefetch" href="js/utils.js">
-    
-    <!-- CSS - Load with high priority -->
-    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
-    
-    <!-- Resource Hints for Better Performance -->
-    <link rel="prefetch" href="#about">
-    <link rel="prefetch" href="#services">
-    <link rel="prefetch" href="#contact">
+    <link rel="stylesheet" href="css/main.css?v=20250628c">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -260,7 +246,7 @@
             <div class="nav__brand">
                 <a href="index.html" class="nav__logo" aria-label="Home">
                     <img src="assets/images/logo.png" alt="Company Logo" class="nav__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="nav__logo-text">Your Company</span>
+                    <span class="nav__logo-text">Northline <span>Advisory</span></span>
                 </a>
             </div>
             
@@ -336,16 +322,27 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
+        <svg class="svg-defs" aria-hidden="true" focusable="false">
+            <defs>
+                <clipPath id="hero-bottom-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M0,0 H1 V0.955 C0.84,0.985 0.70,0.925 0.56,0.955 C0.42,0.985 0.28,0.925 0,0.955 Z"/>
+                </clipPath>
+            </defs>
+        </svg>
+
         <!-- Hero Section - Problem/Solution Focused -->
         <section class="hero hero--business" id="home" itemscope itemtype="https://schema.org/WebPage">
+            <div class="hero__background" aria-hidden="true"></div>
+            <div class="hero__particles" aria-hidden="true"></div>
             <div class="hero__container container">
                 <div class="hero__content">
-                    <div class="hero__badge">Trusted by 500+ Businesses</div>
+                    <div class="hero__badge">Trusted by 500+ businesses</div>
                     <h1 class="hero__title" itemprop="name">
-                        Efficiency That Drives Results.
+                        <span class="hero__title-line">Clarity for growing</span>
+                        <span class="hero__title-line hero__title-line--accent">businesses.</span>
                     </h1>
                     <p class="hero__description" itemprop="description">
-                        We help businesses like yours reduce costs by <strong>35%</strong> and increase efficiency by <strong>50%</strong> through proven optimization strategies. Get your free business assessment today.
+                        We help companies reduce costs by <strong>35%</strong> and increase efficiency by <strong>50%</strong> through proven optimization strategies. Get a free business assessment — this demo shows how a consulting firm can present results upfront.
                     </p>
                     <div class="hero__proof">
                         <div class="hero__proof-item">
@@ -363,14 +360,14 @@
                     </div>
                     <div class="hero__buttons">
                         <a href="#contact" class="btn btn--primary btn--large" aria-label="Get free business assessment">Get Free Assessment</a>
-                        <a href="#case-studies" class="btn btn--secondary btn--large" aria-label="View success stories">See Case Studies</a>
+                        <a href="#case-studies" class="btn btn--on-dark btn--large" aria-label="View success stories">See Case Studies</a>
                     </div>
                     <div class="hero__trust">
                         <p class="hero__trust-text">Trusted by industry leaders:</p>
                         <div class="hero__trust-logos">
-                            <span class="hero__trust-logo">Company 1</span>
-                            <span class="hero__trust-logo">Company 2</span>
-                            <span class="hero__trust-logo">Company 3</span>
+                            <span class="hero__trust-logo">Meridian Co.</span>
+                            <span class="hero__trust-logo">Atlas Group</span>
+                            <span class="hero__trust-logo">Summit Labs</span>
                         </div>
                     </div>
                 </div>
@@ -381,8 +378,9 @@
         <section class="section problems" id="problems">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Common Business Problems We Solve</h2>
-                    <p class="section__description">Every business faces challenges. Here's how we help you overcome them.</p>
+                    <span class="section__label">Challenges</span>
+                    <h2 class="section__title">Problems we solve</h2>
+                    <p class="section__description">Every business faces friction. Here's how Northline helps clients move past it.</p>
                 </div>
                 
                 <div class="problems__grid">
@@ -784,12 +782,13 @@
         <section class="section services" id="services">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">How We Solve Your Business Challenges</h2>
-                    <p class="section__description">Our proven solutions deliver measurable results that transform your business</p>
+                    <span class="section__label">Services</span>
+                    <h2 class="section__title">How we solve your challenges</h2>
+                    <p class="section__description">Problem → solution → proof. Each service card shows the full story prospects need before they call.</p>
                 </div>
                 
                 <div class="services__grid" itemscope itemtype="https://schema.org/Service">
-                    <article class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <article class="service-card" id="consulting" itemscope itemtype="https://schema.org/Service">
                         <div class="service-card__header">
                             <div class="service-card__icon" aria-hidden="true">💼</div>
                             <h3 class="service-card__title" itemprop="name">Business Consulting</h3>
@@ -832,7 +831,7 @@
                         </div>
                     </article>
                     
-                    <article class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <article class="service-card" id="financial" itemscope itemtype="https://schema.org/Service">
                         <div class="service-card__header">
                             <div class="service-card__icon" aria-hidden="true">📊</div>
                             <h3 class="service-card__title" itemprop="name">Financial Planning</h3>
@@ -875,7 +874,7 @@
                         </div>
                     </article>
                     
-                    <article class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <article class="service-card" id="growth" itemscope itemtype="https://schema.org/Service">
                         <div class="service-card__header">
                             <div class="service-card__icon" aria-hidden="true">🚀</div>
                             <h3 class="service-card__title" itemprop="name">Growth Strategy</h3>
@@ -1674,7 +1673,7 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
-                <p class="footer__text">&copy; <span id="current-year"></span> Your Company. All rights reserved.</p>
+                <p class="footer__text">&copy; <span id="current-year"></span> Northline Advisory · Demo template by <a href="https://webopsdevelopment.com" style="color: inherit;">WebOps Development</a></p>
                 <nav class="footer__nav" aria-label="Footer navigation">
                     <a href="/privacy-policy">Privacy Policy</a> | 
                     <a href="/terms-of-service">Terms of Service</a> | 

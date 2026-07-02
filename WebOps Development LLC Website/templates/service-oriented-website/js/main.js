@@ -4,7 +4,7 @@
 
 import { getTheme, setTheme } from './utils.js';
 import { initNavigation } from './navigation.js';
-import { initAnimations, initScrollToTop } from './animations.js';
+import { initAnimations, initHeroReveal, initScrollToTop } from './animations.js';
 import { initSEO } from './seo.js';
 
 // Initialize when DOM is ready
@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize navigation
     initNavigation();
 
-    // Initialize animations
+    initHeroReveal();
+
     initAnimations();
 
     // Initialize scroll to top

@@ -2,53 +2,64 @@
  * Scroll Animations and Effects
  */
 
-import { isInViewport, debounce } from './utils.js';
+import { debounce } from './utils.js';
 
 export function initAnimations() {
-    // Intersection Observer for fade-in animations
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections and cards
-    const animatedElements = document.querySelectorAll('.section, .card');
+    const animatedElements = document.querySelectorAll(
+        '.section, .trust-item, .service-card, .gallery__item, .offer-card, .testimonial-card, .about__media, .about__content'
+    );
     animatedElements.forEach(el => {
+        el.classList.add('reveal-on-scroll');
         observer.observe(el);
     });
 
-    // Header shadow on scroll
     const header = document.getElementById('header');
-    let lastScroll = 0;
+    if (!header) return;
 
     const handleScroll = debounce(() => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        if (window.pageYOffset > 24) {
+            header.classList.add('is-scrolled');
         } else {
-            header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+            header.classList.remove('is-scrolled');
         }
-
-        lastScroll = currentScroll;
     }, 10);
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 }
 
-// Scroll to top button visibility
+export function initHeroReveal() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    if (reducedMotion) {
+        hero.classList.add('is-revealed');
+        return;
+    }
+
+    requestAnimationFrame(() => {
+        hero.classList.add('is-revealed');
+    });
+}
+
 export function initScrollToTop() {
     const scrollTopBtn = document.getElementById('scroll-top');
-    
+
     if (!scrollTopBtn) return;
 
     const handleScroll = debounce(() => {
@@ -59,7 +70,7 @@ export function initScrollToTop() {
         }
     }, 100);
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({
@@ -68,4 +79,3 @@ export function initScrollToTop() {
         });
     });
 }
-
