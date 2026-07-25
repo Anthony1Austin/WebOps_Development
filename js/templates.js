@@ -9,6 +9,18 @@
 
 export const templates = [
     {
+        name: "Expert Laundry Repair",
+        kind: "client",
+        status: "live",
+        meta: "Commercial laundry repair · Lodi, OH",
+        tagline: "Factory-trained commercial washer & dryer repair for hotels, laundromats, and multi-unit properties — service requests, reviews, and field notes.",
+        features: ["Service requests", "Reviews", "Field notes"],
+        color: "#1D4ED8",
+        badge: "Service",
+        image: "assets/images/templates/expert-laundry-repair-preview.jpg",
+        liveUrl: "https://www.expertlaundryrepair.com/"
+    },
+    {
         name: "ClubExtreme Volleyball",
         kind: "client",
         status: "live",
@@ -133,7 +145,7 @@ export const templates = [
 ];
 
 /** Bump when replacing files under assets/images/templates/ so browsers fetch fresh previews. */
-export const TEMPLATE_PREVIEW_ASSET_VERSION = '20250628e';
+export const TEMPLATE_PREVIEW_ASSET_VERSION = '20260725a';
 
 /**
  * Cache-bust same-origin template preview paths (not absolute URLs).
